@@ -39,6 +39,24 @@ public class TipoModularController {
 	public void list() {
 		listaTipoModulares = tmService.list();
 	}
+	
+	public void eliminar(TipoModularEntities vc) {
+		try {
+			tmService.eliminar(vc.getCid_tipo_modular());
+			list();
+		} catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	
+	public void modificar() {
+		try {
+			tmService.modificar(this.tipomodularCenter);
+			this.list();
+		} catch(Exception e) {
+			e.getMessage();
+		}
+	}
 	// Getters and Setters
 	public void setTipoModularCenter(TipoModularEntities tipoModularCenter) {
 		// TODO Auto-generated method stub

@@ -14,6 +14,7 @@ import pe.edu.upc.service.ITipoModularService;
 @RequestScoped
 public class TipoModularServiceImpl implements ITipoModularService {
 
+	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private ITipoModularDao tmDao;
 
@@ -25,5 +26,17 @@ public class TipoModularServiceImpl implements ITipoModularService {
 	public List<TipoModularEntities> list() {
 		// TODO Auto-generated method stub
 		return tmDao.list();
+	}
+
+	@Override
+	public void eliminar(int cid_tipo_modular) {
+		// TODO Auto-generated method stub
+		tmDao.eliminar(cid_tipo_modular);
+	}
+
+	@Override
+	public void modificar(TipoModularEntities vc) {
+		// TODO Auto-generated method stub
+		tmDao.modificar(vc);
 	}
 }
