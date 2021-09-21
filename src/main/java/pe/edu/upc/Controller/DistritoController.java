@@ -17,13 +17,14 @@ public class DistritoController {
 	@Inject // #3
 	private IDistritoService dService;
 
-	private DistritoEntities distritoCenter;
+	private DistritoEntities distrito;
 	List<DistritoEntities> listaDistrito;
 
 	@PostConstruct // #6
 	public void init() { // #5
-		distritoCenter = new DistritoEntities();
+		distrito = new DistritoEntities();
 		listaDistrito = new ArrayList<DistritoEntities>();
+		this.list();
 	}
 
 	public String newDistrito() { // #7
@@ -32,11 +33,21 @@ public class DistritoController {
 	}
 
 	public void insert() { // #8
-		dService.insert(distritoCenter);
+		dService.insert(distrito);
+		cleanDistrito();
+	}
+	
+	public void delete(DistritoEntities distrito) {
+		dService.delete(distrito.getCid_distrito());
+		list();
 	}
 
 	public void list() { // #9
 		listaDistrito = dService.list();
+	}
+	
+	public void cleanDistrito() {
+		this.init();
 	}
 
 	// Getters and Setters #4 except el service
@@ -49,10 +60,10 @@ public class DistritoController {
 	}
 
 	public DistritoEntities getDistritoCenter() {
-		return distritoCenter;
+		return distrito;
 	}
 
 	public void setDistritoCenter(DistritoEntities distritoCenter) {
-		this.distritoCenter = distritoCenter;
+		this.distrito = distritoCenter;
 	}
 }

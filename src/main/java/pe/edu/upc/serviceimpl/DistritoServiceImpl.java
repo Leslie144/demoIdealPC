@@ -22,6 +22,10 @@ public class DistritoServiceImpl implements IDistritoService {
 		// TODO Auto-generated method stub
 		dDao.insert(vc); // #5
 	}
+	
+	public void delete(int idDistrito) {
+		dDao.delete(idDistrito);
+	}
 
 	public List<DistritoEntities> list() {
 		// TODO Auto-generated method stub

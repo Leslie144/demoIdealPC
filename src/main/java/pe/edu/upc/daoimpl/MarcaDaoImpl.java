@@ -24,6 +24,14 @@ public class MarcaDaoImpl implements IMarcaDao {
 			System.out.println("Error al insertar una Marca");
 		}
 	}
+	
+	public void delete(int idMarca) {
+		try {
+			em.remove(idMarca);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar una Marca");
+		}
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<MarcaEntities> list() {

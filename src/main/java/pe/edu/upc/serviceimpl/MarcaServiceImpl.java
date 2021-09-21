@@ -22,6 +22,10 @@ public class MarcaServiceImpl implements IMarcaService {
 		// TODO Auto-generated method stub
 		mDao.insert(vc); // #5
 	}
+	
+	public void delete(int idMarca) {
+		mDao.delete(idMarca);
+	}
 
 	public List<MarcaEntities> list() {
 		// TODO Auto-generated method stub
