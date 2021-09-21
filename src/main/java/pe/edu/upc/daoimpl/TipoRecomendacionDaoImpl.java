@@ -41,11 +41,24 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 	@Override
 	public void delete(int id_recomendacion) {
 		// TODO Auto-generated method stub
+		TipoRecomendacionEntities tipo_recomendacion = new TipoRecomendacionEntities();
 		try {
+			tipo_recomendacion = em.getReference(TipoRecomendacionEntities.class, tipo_recomendacion);
 			em.remove(id_recomendacion);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error al eliminar");
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Override
+	public void update(TipoRecomendacionEntities vc) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(vc);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 	}
 

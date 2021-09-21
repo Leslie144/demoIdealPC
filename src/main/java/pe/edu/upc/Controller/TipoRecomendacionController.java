@@ -44,6 +44,23 @@ public class TipoRecomendacionController {
 		list();
 	}
 
+	// modificar
+	public void update() {
+		try {
+			trService.update(tiporecomendacionCenter);
+			this.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+	
+	public String UpdatePre(TipoRecomendacionEntities tipo_recomendacion) {
+		this.setTiporecomendacionCenter(tipo_recomendacion);
+		return "tiporecomendacionMod.xhtml";
+	}
+	
+
 	// Getters and Setters #4 except el service
 	public TipoRecomendacionEntities getTiporecomendacionCenter() {
 		return tiporecomendacionCenter;

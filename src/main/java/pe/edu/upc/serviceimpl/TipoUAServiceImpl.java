@@ -34,4 +34,10 @@ public class TipoUAServiceImpl implements ITipoUAService {
 		tuaDao.delete(id_tua);
 	}
 
+	@Override
+	public void update(TipoUAEntities vc) {
+		// TODO Auto-generated method stub
+		tuaDao.update(vc);
+	}
+
 }

@@ -8,6 +8,9 @@ public interface ITipoUAService {
 	public void insert(TipoUAEntities vc);
 
 	public void delete(int id_tua);
-	
+
 	public List<TipoUAEntities> list();
+
+	public void update(TipoUAEntities vc);
+
 }

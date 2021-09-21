@@ -8,6 +8,8 @@ public interface ITipoRecomendacionDao {
 	public void insert(TipoRecomendacionEntities vc);
 
 	public void delete(int id_recomendacion);
-	
+
 	public List<TipoRecomendacionEntities> list();
+
+	public void update(TipoRecomendacionEntities vc);
 }

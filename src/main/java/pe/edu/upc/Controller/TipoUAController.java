@@ -44,6 +44,22 @@ public class TipoUAController {
 		list();
 	}
 
+	// modificar
+	public void update() {
+		try {
+			tuaService.update(tipouaCenter);
+			this.list();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.getMessage();
+		}
+	}
+
+	public String UpdatePre(TipoUAEntities tipo_ua) {
+		this.setTipouaCenter(tipo_ua);
+		return "tipouaMod.xhtml";
+	}
+	
 	// Getters and Setters #4 except el service
 	public TipoUAEntities getTipouaCenter() {
 		return tipouaCenter;
