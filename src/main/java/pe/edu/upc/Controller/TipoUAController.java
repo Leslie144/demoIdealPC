@@ -39,6 +39,11 @@ public class TipoUAController {
 		listaTipoUA = tuaService.list();
 	}
 
+	public void delete(TipoUAEntities tipotua) {
+		tuaService.delete(tipotua.getCid_tipo_ua());
+		list();
+	}
+
 	// Getters and Setters #4 except el service
 	public TipoUAEntities getTipouaCenter() {
 		return tipouaCenter;

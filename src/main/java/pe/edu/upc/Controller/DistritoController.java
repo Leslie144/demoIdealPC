@@ -42,7 +42,7 @@ public class DistritoController {
 		list();
 	}
 
-	public void list() { 
+	public void list() { // #9
 		listaDistrito = dService.list();
 	}
 	

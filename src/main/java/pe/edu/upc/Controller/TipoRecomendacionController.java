@@ -39,6 +39,11 @@ public class TipoRecomendacionController {
 		listaTipoRecomendacion = trService.list();
 	}
 
+	public void delete(TipoRecomendacionEntities tiporecomendacion) {
+		trService.delete(tiporecomendacion.getCid_tipo_recomendacion());
+		list();
+	}
+
 	// Getters and Setters #4 except el service
 	public TipoRecomendacionEntities getTiporecomendacionCenter() {
 		return tiporecomendacionCenter;

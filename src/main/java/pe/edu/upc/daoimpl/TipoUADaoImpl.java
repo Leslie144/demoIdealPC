@@ -39,4 +39,15 @@ public class TipoUADaoImpl implements ITipoUADao {
 		}
 		return lista;
 	}
+
+	@Override
+	public void delete(int id_tua) {
+		// TODO Auto-generated method stub
+		try {
+			em.remove(id_tua);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al eliminar");
+		}
+	}
 }

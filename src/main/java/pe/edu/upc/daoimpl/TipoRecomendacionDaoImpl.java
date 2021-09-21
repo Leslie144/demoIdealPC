@@ -38,4 +38,15 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 		return lista;
 	}
 
+	@Override
+	public void delete(int id_recomendacion) {
+		// TODO Auto-generated method stub
+		try {
+			em.remove(id_recomendacion);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al eliminar");
+		}
+	}
+
 }

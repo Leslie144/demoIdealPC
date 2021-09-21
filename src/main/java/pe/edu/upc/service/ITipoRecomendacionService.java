@@ -7,5 +7,7 @@ import pe.edu.upc.entities.TipoRecomendacionEntities;
 public interface ITipoRecomendacionService {
 	public void insert(TipoRecomendacionEntities vc);
 
+	public void delete(int id_recomendacion);
+	
 	public List<TipoRecomendacionEntities> list();
 }

@@ -28,4 +28,10 @@ public class TipoUAServiceImpl implements ITipoUAService {
 		return tuaDao.list(); // #6
 	}
 
+	@Override
+	public void delete(int id_tua) {
+		// TODO Auto-generated method stub
+		tuaDao.delete(id_tua);
+	}
+
 }
