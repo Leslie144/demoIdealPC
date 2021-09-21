@@ -8,11 +8,11 @@
 
 
 	<ui:define name="title">
-        .:Listado Especialidades:.
+        .:Listado Tipo UA:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Especialidades </span>
+		<span>Tipo UA </span>
 	</ui:define>
 
 	<ui:define name="content">
@@ -22,7 +22,7 @@
 				<div class="col-sm-4">
 					<div class="form-group">
 						<p:commandButton value="Nuevo"
-							action="#{TipoUAController.newTipoUA()}"
+							action="#{tipoUAController.newTipoUA()}"
 							styleClass="btn btn-primary" ajax="false" />
 					</div>
 				</div>
@@ -32,19 +32,19 @@
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
 						<p:dataTable id="lstSpecialty" var="s"
-							value="#{TipoUAController.listaTipoUA}"
+							value="#{tipoUAController.listaTipoUA}"
 							paginator="true" paginatorPosition="top"
 							rowsPerPageTemplate="10,20,30,40,50" rows="10"
 							styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{s.idSpecialty}">
-								<h:outputText value="#{s.Cid_tipo_ua}" />
+							<p:column headerText="Id" sortBy="#{s.cid_tipo_ua}">
+								<h:outputText value="#{s.cid_tipo_ua}" />
 							</p:column>
 
-							<p:column headerText="Tipo UA:" sortBy="#{s.Ntipo_ua}">
-								<h:outputText value="#{s.Ntipo_ua}" />
+							<p:column headerText="Tipo UA:" sortBy="#{s.ntipo_ua}">
+								<h:outputText value="#{s.ntipo_ua}" />
 							</p:column>
 
 				
