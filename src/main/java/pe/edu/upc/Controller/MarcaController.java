@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entities.DistritoEntities;
 import pe.edu.upc.entities.MarcaEntities;
 import pe.edu.upc.service.IMarcaService;
 
@@ -21,9 +22,10 @@ public class MarcaController {
 	List<MarcaEntities> listaMarca;
 
 	@PostConstruct // #6
-	private void imit() { // #5
+	private void init() { // #5
 		marcaCenter = new MarcaEntities();
 		listaMarca = new ArrayList<MarcaEntities>();
+		this.list();
 	}
 
 	public String newMarca() { // #7
@@ -33,6 +35,16 @@ public class MarcaController {
 
 	public void insert() { // #8
 		mService.insert(marcaCenter);
+		cleanMarca();
+	}
+	
+	public void delete(DistritoEntities distrito) {
+		mService.delete(distrito.getCid_distrito());
+		list();
+	}
+	
+	public void cleanMarca() {
+		this.init();
 	}
 
 	public void list() { // #9
