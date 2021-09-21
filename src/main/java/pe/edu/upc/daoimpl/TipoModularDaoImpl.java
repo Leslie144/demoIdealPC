@@ -38,4 +38,28 @@ public class TipoModularDaoImpl implements ITipoModularDao{
 		}
 		return lista;
 	}
+
+	@Transactional
+	@Override
+	public void eliminar(int cid_tipo_modular) {
+		// TODO Auto-generated method stub
+		TipoModularEntities tme = new TipoModularEntities();
+		try {
+			tme = em.getReference(TipoModularEntities.class,cid_tipo_modular);
+			em.remove(tme);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Transactional
+	@Override
+	public void modificar(TipoModularEntities vc) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(vc);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }
