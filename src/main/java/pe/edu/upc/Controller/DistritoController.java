@@ -33,7 +33,7 @@ public class DistritoController {
 	}
 
 	public void insert() { // #8
-		dService.insert(distrito);
+		dService.save(distrito);
 		cleanDistrito();
 	}
 	
@@ -42,12 +42,17 @@ public class DistritoController {
 		list();
 	}
 
-	public void list() { // #9
+	public void list() { 
 		listaDistrito = dService.list();
 	}
 	
 	public void cleanDistrito() {
 		this.init();
+	}
+	
+	public void update() { // #8
+		dService.save(distrito);
+		cleanDistrito();
 	}
 
 	// Getters and Setters #4 except el service

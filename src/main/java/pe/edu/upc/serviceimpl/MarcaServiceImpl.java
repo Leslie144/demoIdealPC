@@ -18,7 +18,7 @@ public class MarcaServiceImpl implements IMarcaService {
 	private IMarcaDao mDao;
 
 	// Methods #1
-	public void insert(MarcaEntities vc) {
+	public void save(MarcaEntities vc) {
 		// TODO Auto-generated method stub
 		mDao.insert(vc); // #5
 	}
