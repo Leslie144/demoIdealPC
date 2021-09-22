@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+ 
 @Entity
 @Table(name = "TIPO_PANEL")
 public class TipoPanelEntities {
@@ -45,3 +45,4 @@ public class TipoPanelEntities {
 	public void setNtipo_panel(String ntipo_panel) {
 		Ntipo_panel = ntipo_panel;
 	}
+}

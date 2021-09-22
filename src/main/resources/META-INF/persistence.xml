@@ -13,6 +13,8 @@
 		<class>pe.edu.upc.entities.MarcaEntities</class>
 		<class>pe.edu.upc.entities.Tienda</class>
 		<class>pe.edu.upc.entities.TipoModularEntities</class>
+		<class>pe.edu.upc.entities.TamanoMBEntities</class>
+		<class>pe.edu.upc.entities.TipoPanelEntities</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
