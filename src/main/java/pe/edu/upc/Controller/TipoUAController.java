@@ -16,7 +16,7 @@ import pe.edu.upc.service.ITipoUAService;
 public class TipoUAController {
 	@Inject // #3
 	private ITipoUAService tuaService;
-	@Inject
+
 	private TipoUAEntities tipouaCenter;
 	List<TipoUAEntities> listaTipoUA;
 

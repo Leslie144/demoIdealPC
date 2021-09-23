@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ITipoRecomendacionDao;
 import pe.edu.upc.entities.TipoRecomendacionEntities;
@@ -16,8 +15,6 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
 
-	@Transactional
-	@Override
 	public void insert(TipoRecomendacionEntities vc) {
 		// TODO Auto-generated method stub
 		try {
@@ -29,7 +26,6 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<TipoRecomendacionEntities> list() {
 		// TODO Auto-generated method stub
 		List<TipoRecomendacionEntities> lista = new ArrayList<TipoRecomendacionEntities>();

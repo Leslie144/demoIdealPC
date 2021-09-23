@@ -6,7 +6,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IMarcaDao;
 import pe.edu.upc.entities.MarcaEntities;
@@ -15,8 +14,6 @@ public class MarcaDaoImpl implements IMarcaDao {
 
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
-	@Transactional
-	@Override
 
 	public void insert(MarcaEntities vc) {
 		// TODO Auto-generated method stub
@@ -29,7 +26,6 @@ public class MarcaDaoImpl implements IMarcaDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<MarcaEntities> list() {
 		// TODO Auto-generated method stub
 		List<MarcaEntities> lista = new ArrayList<MarcaEntities>();
