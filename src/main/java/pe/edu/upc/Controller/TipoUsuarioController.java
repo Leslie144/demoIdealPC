@@ -8,7 +8,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entities.TipoModularEntities;
 import pe.edu.upc.entities.TipoUsuarioEntities;
 import pe.edu.upc.service.ITipoUsuarioService;
 
