@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entities.TipoModularEntities;
+import pe.edu.upc.entity.Specialty;
 import pe.edu.upc.service.ITipoModularService;
 
 @Named
@@ -56,6 +57,12 @@ public class TipoModularController {
 		} catch(Exception e) {
 			e.getMessage();
 		}
+	}
+	
+	public String Modifpre(TipoModularEntities tm) {
+		this.setTipoModularCenter(tm);
+		return "TipoModularMod.xhtml";
+
 	}
 	// Getters and Setters
 	public void setTipoModularCenter(TipoModularEntities tipoModularCenter) {
