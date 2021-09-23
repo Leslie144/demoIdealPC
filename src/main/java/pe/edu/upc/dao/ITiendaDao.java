@@ -8,4 +8,7 @@ public interface ITiendaDao {
 	public void insert(Tienda t);
 	
 	public List<Tienda> list();
+
+	public void eliminar(int idTienda);
+	public void modificar (Tienda tienda);
 }
