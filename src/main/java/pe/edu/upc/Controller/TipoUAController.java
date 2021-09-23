@@ -16,10 +16,20 @@ import pe.edu.upc.service.ITipoUAService;
 public class TipoUAController {
 	@Inject // #3
 	private ITipoUAService tuaService;
-
+	
 	private TipoUAEntities tipouaCenter;
 	List<TipoUAEntities> listaTipoUA;
 
+	private String mensaje = "error";
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+	
 	@PostConstruct // #6
 	public void init() { // #5
 		tipouaCenter = new TipoUAEntities();

@@ -20,6 +20,16 @@ public class TipoRecomendacionController {
 	private TipoRecomendacionEntities tiporecomendacionCenter;
 	List<TipoRecomendacionEntities> listaTipoRecomendacion;
 
+	private String mensaje = "error";
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
+	
 	@PostConstruct // #6
 	public void init() { // #5
 		tiporecomendacionCenter = new TipoRecomendacionEntities();
