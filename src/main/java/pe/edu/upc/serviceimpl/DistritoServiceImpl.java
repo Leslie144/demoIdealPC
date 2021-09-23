@@ -16,12 +16,14 @@ public class DistritoServiceImpl implements IDistritoService {
 
 	@Inject // #3
 	private IDistritoDao dDao;
+	@Override
 
 	// Methods #1
 	public void insert(DistritoEntities vc) {
 		// TODO Auto-generated method stub
 		dDao.insert(vc); // #5
 	}
+	@Override
 
 	public List<DistritoEntities> list() {
 		// TODO Auto-generated method stub

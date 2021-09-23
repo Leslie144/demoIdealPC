@@ -12,6 +12,7 @@
 		<class>pe.edu.upc.entities.DistritoEntities</class>
 		<class>pe.edu.upc.entities.MarcaEntities</class>
 		<class>pe.edu.upc.entities.Tienda</class>
+		<class>pe.edu.upc.entities.Usuario</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

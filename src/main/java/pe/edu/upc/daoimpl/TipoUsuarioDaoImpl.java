@@ -17,6 +17,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 	private EntityManager em;
 
 	@Transactional
+	@Override
 	public void insert(TipoUsuarioEntities vc) {
 		// TODO Auto-generated method stub
 		try {
@@ -28,6 +29,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<TipoUsuarioEntities> list() {
 		// TODO Auto-generated method stub
 		List<TipoUsuarioEntities> lista = new ArrayList<TipoUsuarioEntities>();

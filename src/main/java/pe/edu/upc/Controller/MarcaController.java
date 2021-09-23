@@ -16,6 +16,7 @@ import pe.edu.upc.service.IMarcaService;
 public class MarcaController {
 	@Inject // #3
 	private IMarcaService mService;
+	@Inject
 
 	private MarcaEntities marcaCenter;
 	List<MarcaEntities> listaMarca;

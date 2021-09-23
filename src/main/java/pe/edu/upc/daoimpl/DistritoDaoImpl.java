@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IDistritoDao;
 import pe.edu.upc.entities.DistritoEntities;
@@ -14,7 +15,8 @@ public class DistritoDaoImpl implements IDistritoDao {
 
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
-
+	@Transactional
+	@Override
 	public void insert(DistritoEntities vc) {
 		// TODO Auto-generated method stub
 		try {
@@ -26,6 +28,7 @@ public class DistritoDaoImpl implements IDistritoDao {
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<DistritoEntities> list() {
 		// TODO Auto-generated method stub
 		List<DistritoEntities> lista = new ArrayList<DistritoEntities>();
