@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TIPO_USUARIO")
+@Table(name = "tipoUsuario")
 public class TipoUsuarioEntities {
 
 	@Id
@@ -30,19 +30,19 @@ public class TipoUsuarioEntities {
 	}
 	
 	//Getters and setters
-	public int getCid_tipo_usuario() {
+	public int getcidTipoUsuario() {
 		return Cid_tipo_usuario;
 	}
 
-	public void setCid_tipo_usuario(int cid_tipo_usuario) {
+	public void setcidTipoUsuario(int cid_tipo_usuario) {
 		Cid_tipo_usuario = cid_tipo_usuario;
 	}
 
-	public String getNtipo_usuario() {
+	public String getnTipoUsuario() {
 		return Ntipo_usuario;
 	}
 
-	public void setNtipo_usuario(String ntipo_usuario) {
+	public void setnTipoUsuario(String ntipo_usuario) {
 		Ntipo_usuario = ntipo_usuario;
 	}
 }
