@@ -21,13 +21,13 @@
 
 			<p:inputText autocomplete="off" id="Cid_tipo_ua"
 				styleClass="form-control"
-				value="#{tipoUAController.tipouaCenter.cid_tipo_ua}" required="true" />
+				value="#{tipoUAController.tipouaCenter.idTipoUA}" required="true" />
 			<h:outputLabel for="nameSpecialty" value="ID: "
 				styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="Ntipo_ua"
 				styleClass="form-control"
-				value="#{tipoUAController.tipouaCenter.ntipo_ua}"
+				value="#{tipoUAController.tipouaCenter.nTipoUA}"
 				maxlength="30" required="true"
 				validatorMessage="#{tipoUAController.mensaje}">
 				<f:validateRegex pattern="[1-9]*" />

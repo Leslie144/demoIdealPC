@@ -50,7 +50,7 @@ public class TipoUAController {
 	}
 
 	public void delete(TipoUAEntities tipotua) {
-		tuaService.delete(tipotua.getCid_tipo_ua());
+		tuaService.delete(tipotua.getIdTipoUA());
 		list();
 	}
 
@@ -65,10 +65,6 @@ public class TipoUAController {
 		}
 	}
 
-	public String UpdatePre(TipoUAEntities tipo_ua) {
-		this.setTipouaCenter(tipo_ua);
-		return "tipouaMod.xhtml";
-	}
 	
 	// Getters and Setters #4 except el service
 	public TipoUAEntities getTipouaCenter() {
@@ -86,5 +82,9 @@ public class TipoUAController {
 	public void setListaTipoUA(List<TipoUAEntities> listaTipoUA) {
 		this.listaTipoUA = listaTipoUA;
 	}
+
+	
+	
+	
 
 }

@@ -50,7 +50,7 @@ public class TipoRecomendacionController {
 	}
 
 	public void delete(TipoRecomendacionEntities tiporecomendacion) {
-		trService.delete(tiporecomendacion.getCid_tipo_recomendacion());
+		trService.delete(tiporecomendacion.getIdTipoRecomendacion());
 		list();
 	}
 
@@ -64,14 +64,13 @@ public class TipoRecomendacionController {
 			e.getMessage();
 		}
 	}
-	
+	// Getters and Setters #4 except el service
+
 	public String UpdatePre(TipoRecomendacionEntities tipo_recomendacion) {
 		this.setTiporecomendacionCenter(tipo_recomendacion);
 		return "tiporecomendacionMod.xhtml";
 	}
-	
 
-	// Getters and Setters #4 except el service
 	public TipoRecomendacionEntities getTiporecomendacionCenter() {
 		return tiporecomendacionCenter;
 	}
@@ -87,4 +86,7 @@ public class TipoRecomendacionController {
 	public void setListaTipoRecomendacion(List<TipoRecomendacionEntities> listaTipoRecomendacion) {
 		this.listaTipoRecomendacion = listaTipoRecomendacion;
 	}
+	
+
+	
 }

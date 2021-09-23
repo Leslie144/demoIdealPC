@@ -12,36 +12,42 @@ import javax.persistence.Table;
 public class TipoRecomendacionEntities {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cid_tipo_recomendacion;
+	private int idTipoRecomendacion;
 
-	@Column(name = "Trecomendacion", length = 100, nullable = false)
-	private String Trecomendacion;
+	@Column(name = "tRecomendacion", length = 100, nullable = false)
+	private String tRecomendacion;
 
 	public TipoRecomendacionEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TipoRecomendacionEntities(int cid_tipo_recomendacion, String trecomendacion) {
+	public TipoRecomendacionEntities(int idTipoRecomendacion, String tRecomendacion) {
 		super();
-		Cid_tipo_recomendacion = cid_tipo_recomendacion;
-		Trecomendacion = trecomendacion;
+		this.idTipoRecomendacion = idTipoRecomendacion;
+		this.tRecomendacion = tRecomendacion;
 	}
 
 	// Getters and setters
-	public int getCid_tipo_recomendacion() {
-		return Cid_tipo_recomendacion;
+
+	public int getIdTipoRecomendacion() {
+		return idTipoRecomendacion;
 	}
 
-	public void setCid_tipo_recomendacion(int cid_tipo_recomendacion) {
-		Cid_tipo_recomendacion = cid_tipo_recomendacion;
+	public void setIdTipoRecomendacion(int idTipoRecomendacion) {
+		this.idTipoRecomendacion = idTipoRecomendacion;
 	}
 
-	public String getTrecomendacion() {
-		return Trecomendacion;
+	public String gettRecomendacion() {
+		return tRecomendacion;
 	}
 
-	public void setTrecomendacion(String trecomendacion) {
-		Trecomendacion = trecomendacion;
+	public void settRecomendacion(String tRecomendacion) {
+		this.tRecomendacion = tRecomendacion;
 	}
+
+	
+
+	
+	
 }
