@@ -40,6 +40,7 @@ public class TamanoMBController {
 	}
 
 	// Getters and Setters #4 except el service
+
 	public TamanoMBEntities getTamanombCenter() {
 		return tamanombCenter;
 	}
@@ -56,4 +57,5 @@ public class TamanoMBController {
 		this.listaTamanoMB = listaTamanoMB;
 	}
 
+	
 }

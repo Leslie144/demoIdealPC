@@ -40,6 +40,7 @@ public class TipoPanelController {
 	}
 
 	// Getters and Setters #4 except el service
+
 	public TipoPanelEntities getTipopanelCenter() {
 		return tipopanelCenter;
 	}
@@ -55,5 +56,7 @@ public class TipoPanelController {
 	public void setListaTipoPanel(List<TipoPanelEntities> listaTipoPanel) {
 		this.listaTipoPanel = listaTipoPanel;
 	}
+
+	
 
 }

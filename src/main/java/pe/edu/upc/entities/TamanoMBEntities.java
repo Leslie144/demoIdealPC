@@ -13,36 +13,40 @@ public class TamanoMBEntities {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cid_tamano_mb;
+	private int cIdTamanoMB;
 	
-	@Column(name = "Ntamano_mb", length = 100, nullable = false)
-	private String Ntamano_mb;
+	@Column(name = "nTamanoMB", length = 100, nullable = false)
+	private String nTamanoMB;
 
 	public TamanoMBEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TamanoMBEntities(int cid_tamano_mb, String ntamano_mb) {
+	public TamanoMBEntities(int cIdTamanoMB, String nTamanoMB) {
 		super();
-		Cid_tamano_mb = cid_tamano_mb;
-		Ntamano_mb = ntamano_mb;
+		this.cIdTamanoMB = cIdTamanoMB;
+		this.nTamanoMB = nTamanoMB;
 	}
 
 	//Getters and setters
-	public int getCid_tamano_mb() {
-		return Cid_tamano_mb;
+
+	public int getcIdTamanoMB() {
+		return cIdTamanoMB;
 	}
 
-	public void setCid_tamano_mb(int cid_tamano_mb) {
-		Cid_tamano_mb = cid_tamano_mb;
+	public void setcIdTamanoMB(int cIdTamanoMB) {
+		this.cIdTamanoMB = cIdTamanoMB;
 	}
 
-	public String getNtamano_mb() {
-		return Ntamano_mb;
+	public String getnTamanoMB() {
+		return nTamanoMB;
 	}
 
-	public void setNtamano_mb(String ntamano_mb) {
-		Ntamano_mb = ntamano_mb;
+	public void setnTamanoMB(String nTamanoMB) {
+		this.nTamanoMB = nTamanoMB;
 	}
+
+	
+	
 }
