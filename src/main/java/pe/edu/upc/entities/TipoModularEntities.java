@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="TIPO_MODULAR")
+@Table(name="tipoModular")
 public class TipoModularEntities {
 
 	@Id
@@ -30,19 +30,20 @@ public class TipoModularEntities {
 	}
 	
 	//Getters and setters
-	public int getCid_tipo_modular() {
+	public int getcidTipoModular() {
 		return Cid_tipo_modular;
 	}
 
-	public void setCid_tipo_modular(int cid_tipo_modular) {
+	public void setcidTipoModular(int cid_tipo_modular) {
 		Cid_tipo_modular = cid_tipo_modular;
 	}
 
-	public String getNtipo_modular() {
+	public String getnTipoNodular() {
 		return Ntipo_modular;
 	}
 
-	public void setNtipo_modular(String ntipo_modular) {
+	public void setnTipoModular(String ntipo_modular) {
 		Ntipo_modular = ntipo_modular;
 	}
+
 }

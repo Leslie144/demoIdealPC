@@ -51,7 +51,7 @@ public class TipoUsuarioController {
 
 	public void eliminar(TipoUsuarioEntities vc) {
 		try {
-			tuService.eliminar(vc.getCid_tipo_usuario());
+			tuService.eliminar(vc.getcidTipoUsuario());
 			list();
 		} catch (Exception e) {
 			e.getMessage();

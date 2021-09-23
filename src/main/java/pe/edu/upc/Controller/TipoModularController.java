@@ -51,7 +51,7 @@ public class TipoModularController {
 
 	public void eliminar(TipoModularEntities vc) {
 		try {
-			tmService.eliminar(vc.getCid_tipo_modular());
+			tmService.eliminar(vc.getcidTipoModular());
 			list();
 		} catch (Exception e) {
 			e.getMessage();
