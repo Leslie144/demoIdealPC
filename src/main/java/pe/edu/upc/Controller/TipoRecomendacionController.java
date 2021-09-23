@@ -16,7 +16,7 @@ import pe.edu.upc.service.ITipoRecomendacionService;
 public class TipoRecomendacionController {
 	@Inject // #3
 	private ITipoRecomendacionService trService;
-
+	@Inject
 	private TipoRecomendacionEntities tiporecomendacionCenter;
 	List<TipoRecomendacionEntities> listaTipoRecomendacion;
 

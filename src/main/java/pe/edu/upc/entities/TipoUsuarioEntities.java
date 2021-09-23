@@ -13,36 +13,37 @@ public class TipoUsuarioEntities {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cid_tipo_usuario;
+	private int idTipousuario;
 
-	@Column(name = "Ntipo_usuario", length = 50, nullable = false)
-	private String Ntipo_usuario;
+	@Column(name = "nTipousuario", length = 50, nullable = false)
+	private String nTipousuario;
 
 	public TipoUsuarioEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TipoUsuarioEntities(int cid_tipo_usuario, String ntipo_usuario) {
+	public TipoUsuarioEntities(int idTipousuario, String nTipousuario) {
 		super();
-		Cid_tipo_usuario = cid_tipo_usuario;
-		Ntipo_usuario = ntipo_usuario;
+		this.idTipousuario = idTipousuario;
+		this.nTipousuario = nTipousuario;
+	}
+
+	public int getIdTipousuario() {
+		return idTipousuario;
+	}
+
+	public void setIdTipousuario(int idTipousuario) {
+		this.idTipousuario = idTipousuario;
+	}
+
+	public String getnTipousuario() {
+		return nTipousuario;
+	}
+
+	public void setnTipousuario(String nTipousuario) {
+		this.nTipousuario = nTipousuario;
 	}
 	
-	//Getters and setters
-	public int getCid_tipo_usuario() {
-		return Cid_tipo_usuario;
-	}
-
-	public void setCid_tipo_usuario(int cid_tipo_usuario) {
-		Cid_tipo_usuario = cid_tipo_usuario;
-	}
-
-	public String getNtipo_usuario() {
-		return Ntipo_usuario;
-	}
-
-	public void setNtipo_usuario(String ntipo_usuario) {
-		Ntipo_usuario = ntipo_usuario;
-	}
+	
 }

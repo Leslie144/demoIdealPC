@@ -16,7 +16,7 @@ import pe.edu.upc.service.IDistritoService;
 public class DistritoController {
 	@Inject // #3
 	private IDistritoService dService;
-
+	@Inject
 	private DistritoEntities distritoCenter;
 	List<DistritoEntities> listaDistrito;
 

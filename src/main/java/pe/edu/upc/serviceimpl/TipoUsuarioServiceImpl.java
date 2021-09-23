@@ -18,11 +18,15 @@ public class TipoUsuarioServiceImpl implements ITipoUsuarioService {
 	private ITipoUsuarioDao tuDao;
 
 	// Methods #1
+
+	@Override
 	public void insert(TipoUsuarioEntities vc) {
 		// TODO Auto-generated method stub
 		tuDao.insert(vc); // #5
 	}
 
+
+	@Override
 	public List<TipoUsuarioEntities> list() {
 		// TODO Auto-generated method stub
 		return tuDao.list(); // #6

@@ -12,39 +12,40 @@ import javax.persistence.Table;
 public class DistritoEntities {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cid_distrito;
+	private int idDistrito;
 	
 	@Column(name = "Nnombre_distrito", length = 120, nullable = false)
-	private String Nnombre_distrito;
+	private String nombreDistrito;
 
 	public DistritoEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public DistritoEntities(int cid_distrito, String nnombre_distrito) {
+	public DistritoEntities(int idDistrito, String nombreDistrito) {
 		super();
-		Cid_distrito = cid_distrito;
-		Nnombre_distrito = nnombre_distrito;
+		this.idDistrito = idDistrito;
+		this.nombreDistrito = nombreDistrito;
+	}
+
+	public int getIdDistrito() {
+		return idDistrito;
+	}
+
+	public void setIdDistrito(int idDistrito) {
+		this.idDistrito = idDistrito;
+	}
+
+	public String getNombreDistrito() {
+		return nombreDistrito;
+	}
+
+	public void setNombreDistrito(String nombreDistrito) {
+		this.nombreDistrito = nombreDistrito;
 	}
 
 	
-	//Getters and setters
-	public int getCid_distrito() {
-		return Cid_distrito;
-	}
-
-	public void setCid_distrito(int cid_distrito) {
-		Cid_distrito = cid_distrito;
-	}
-
-	public String getNnombre_distrito() {
-		return Nnombre_distrito;
-	}
-
-	public void setNnombre_distrito(String nnombre_distrito) {
-		Nnombre_distrito = nnombre_distrito;
-	}
+	
 	
 	
 }
