@@ -18,8 +18,6 @@ public class DistritoServiceImpl implements IDistritoService {
 	private IDistritoDao dDao;
 	
 	@Override
-
-	// Methods #1
 	public void insert(DistritoEntities vc) {
 		// TODO Auto-generated method stub
 		dDao.insert(vc); // #5

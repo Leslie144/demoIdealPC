@@ -15,7 +15,6 @@ public class MarcaDaoImpl implements IMarcaDao {
 
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
-
 	@Transactional
 	@Override
 	public void insert(MarcaEntities vc) {
@@ -27,7 +26,6 @@ public class MarcaDaoImpl implements IMarcaDao {
 			System.out.println("Error al insertar una Marca");
 		}
 	}
-
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<MarcaEntities> list() {

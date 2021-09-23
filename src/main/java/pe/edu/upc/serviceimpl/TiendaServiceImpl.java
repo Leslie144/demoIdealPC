@@ -15,22 +15,18 @@ import pe.edu.upc.service.ITiendaService;
 public class TiendaServiceImpl implements ITiendaService{
 	@Inject
 	private ITiendaDao tDao;
-	
 	@Override
 	public void insert(Tienda t) {
 		tDao.insert(t);
 	}
-	
 	@Override
 	public void eliminar(int idTienda) {
 		tDao.eliminar(idTienda);
 	}
-	
 	@Override
 	public List<Tienda>list(){
 		return tDao.list();
 	}
-	
 	@Override
 	public void modificar(Tienda tienda) {
 		tDao.modificar(tienda);
