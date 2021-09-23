@@ -13,7 +13,7 @@ import pe.edu.upc.dao.ITiendaDao;
 import pe.edu.upc.entities.Tienda;
 
 public class TiendaDaoImpl implements ITiendaDao{
-	@PersistenceContext(unitName= "ProyectoIdealPc")
+	@PersistenceContext(unitName= "demoIdealPC")
 	private EntityManager em;
 	
 	@Transactional
