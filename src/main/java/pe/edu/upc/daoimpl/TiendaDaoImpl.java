@@ -37,5 +37,25 @@ public class TiendaDaoImpl implements ITiendaDao{
 		}
 		return lista;
 	}
+	@Transactional
+	@Override
+	public void eliminar(int idTienda) {
+		Tienda tiend =new Tienda();
+		try {
+			tiend=em.getReference(Tienda.class, idTienda);
+			em.remove(tiend);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	@Transactional
+	@Override
+	public void modificar(Tienda tienda) {
+		try {
+			em.merge(tienda);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
 }

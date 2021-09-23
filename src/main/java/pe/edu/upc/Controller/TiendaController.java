@@ -22,6 +22,14 @@ public class TiendaController {
 	private IDistritoService dService;
 	private Tienda tienda;
 	private DistritoEntities distrito;
+	private String mensaje ="error";
+	
+	public String getMensaje() {
+		return mensaje;
+	}
+	public void setMensaje(String mensaje) {
+		this.mensaje=mensaje;
+	}
 	List<Tienda>listatiendas;
 	List<DistritoEntities>listadistritos;
 	
@@ -54,6 +62,42 @@ public class TiendaController {
 	public ITiendaService gettService() {
 		return tService;
 	}
+	
+	public void listar() {
+		try {
+			listatiendas= tService.list();
+		}catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	public void eliminar(Tienda tienda) {
+		try {
+			tService.eliminar(tienda.getIdTienda());
+			listar();
+		}catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	public void modificar() {
+		try {
+			tService.modificar(this.tienda);
+			this.listar();
+		}catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	public String Modifpre(Tienda spec) {
+		this.setTienda(spec);
+		return "tiendaMod.xhtml";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public void settService(ITiendaService tService) {
 		this.tService = tService;
