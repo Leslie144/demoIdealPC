@@ -22,15 +22,15 @@
 			<p:inputText autocomplete="off" id="Cid_tipo_ua"
 				styleClass="form-control"
 				value="#{tipoUAController.tipouaCenter.cid_tipo_ua}" required="true" />
-			<h:outputLabel for="Cid_tipo_ua" value="Nombres "
+			<h:outputLabel for="Cid_tipo_ua" value="ID:  "
 				styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="Ntipo_ua"
 				styleClass="form-control"
-				value="#{tipoUAController.tipouaCenter.ntipo_ua}"
-				maxlength="30" required="true" />
+				value="#{tipoUAController.tipouaCenter.ntipo_ua}" maxlength="30"
+				required="true" />
 			<br />
-			
+
 			<p:commandButton value="Grabar"
 				actionListener="#{tipoUAController.insert()}"
 				styleClass="btn btn-primary " update="@form"
