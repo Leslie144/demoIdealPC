@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import pe.edu.upc.entities.TipoModularEntities;
 import pe.edu.upc.entities.TipoUsuarioEntities;
 import pe.edu.upc.service.ITipoUsuarioService;
 
@@ -19,6 +20,15 @@ public class TipoUsuarioController {
 
 	private TipoUsuarioEntities tipousuarioCenter;
 	List<TipoUsuarioEntities> listaTipoUsuarios;
+	private String mensaje = "error";
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
 
 	@PostConstruct // #6
 	public void init() { // #5
@@ -28,7 +38,7 @@ public class TipoUsuarioController {
 
 	public String newTipoUsuario() { // #7
 		this.setTipousuarioCenter(new TipoUsuarioEntities());
-		return "tipousuario.xhtml";
+		return "TipoUsuario.xhtml";
 	}
 
 	public void insert() { // #8
@@ -37,6 +47,30 @@ public class TipoUsuarioController {
 
 	public void list() { // #9
 		listaTipoUsuarios = tuService.list();
+	}
+
+	public void eliminar(TipoUsuarioEntities vc) {
+		try {
+			tuService.eliminar(vc.getCid_tipo_usuario());
+			list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public void modificar() {
+		try {
+			tuService.modificar(this.tipousuarioCenter);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public String Modifpre(TipoUsuarioEntities tm) {
+		this.setTipousuarioCenter(tm);
+		return "TipoUsuariorMod.xhtml";
+
 	}
 
 	// Getters and Setters #4 except el service
