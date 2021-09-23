@@ -20,18 +20,18 @@
 				styleClass="control-label" />
 			<p:inputText autocomplete="off" id="Cid_tipo_usuario"
 				styleClass="form-control"
-				value="#{TipoUsuarioController.tipousuariocenter.Cid_tipo_usuario}" required="true" />
+				value="#{tipoUsuarioController.tipousuarioCenter.cidTipoUsuario}" required="true" />
 		
 			<h:outputLabel for="Ntipo_usuario" value="TipoUsuario"
 				styleClass="control-label" />
 			<p:inputText autocomplete="off" id="Ntipo_usuario"
 				styleClass="form-control"
-				value="#{TipoUsuarioController.tipousuariocenter.Ntipo_usuario}"
-				maxlength="100" required="true" validatorMessage="#{TipoUsuarioController.mensaje}">
+				value="#{tipoUsuarioController.tipousuarioCenter.nTipoUsuario}"
+				maxlength="100" required="true" validatorMessage="#{tipoUsuarioController.mensaje}">
 			</p:inputText>
 			<br />
 			<p:commandButton value="Grabar"
-				actionListener="#{TipoUsuarioController.insert()}"
+				actionListener="#{tipoUsuarioController.insert()}"
 				styleClass="btn btn-primary " update="@form"
 				action="listTipoUsuario?faces-redirect=true" />
 			<p:commandButton value="Cancelar"

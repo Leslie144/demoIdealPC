@@ -12,39 +12,40 @@ import javax.persistence.Table;
 public class DistritoEntities {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cid_distrito;
+	private int idDistrito;
 	
-	@Column(name = "Nnombre_distrito", length = 120, nullable = false)
-	private String Nnombre_distrito;
+	@Column(name = "nNombre_Distrito", length = 120, nullable = false)
+	private String nNombre_Distrito;
 
 	public DistritoEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public DistritoEntities(int cid_distrito, String nnombre_distrito) {
+	public DistritoEntities(int idDistrito, String nNombre_Distrito) {
 		super();
-		Cid_distrito = cid_distrito;
-		Nnombre_distrito = nnombre_distrito;
+		this.idDistrito = idDistrito;
+		this.nNombre_Distrito = nNombre_Distrito;
+	}
+
+	public int getIdDistrito() {
+		return idDistrito;
+	}
+	//Getters and setters
+
+	public void setIdDistrito(int idDistrito) {
+		this.idDistrito = idDistrito;
+	}
+
+	public String getnNombre_Distrito() {
+		return nNombre_Distrito;
+	}
+
+	public void setnNombre_Distrito(String nNombre_Distrito) {
+		this.nNombre_Distrito = nNombre_Distrito;
 	}
 
 	
-	//Getters and setters
-	public int getCid_distrito() {
-		return Cid_distrito;
-	}
-
-	public void setCid_distrito(int cid_distrito) {
-		Cid_distrito = cid_distrito;
-	}
-
-	public String getNnombre_distrito() {
-		return Nnombre_distrito;
-	}
-
-	public void setNnombre_distrito(String nnombre_distrito) {
-		Nnombre_distrito = nnombre_distrito;
-	}
 	
 	
 }

@@ -26,27 +26,27 @@
 			<div class="row"> <div class="col-sm-12"> <div
 				class="form-group table-responsive box-table-class"> <p:dataTable
 				id="listTipoModulares" var="tm"
-				value="#{TipoModularController.listaTipoModulares}" paginator="true"
+				value="#{tipoModularController.listaTipoModulares}" paginator="true"
 				paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
 				rows="10" styleClass="table table-bordered"
 				emptyMessage="No existen registros" rowIndexVar="item"
 				style="margin-bottom:0">
 
-				<p:column headerText="Id" sortBy="#{tm.Cid_tipo_modular}">
-					<h:outputText value="#{tm.Cid_tipo_modular}" />
+				<p:column headerText="Id" sortBy="#{tm.cidTipoModular}">
+					<h:outputText value="#{tm.cidTipoModular}" />
 				</p:column>
 
-				<p:column headerText="Tipo Modular" sortBy="#{tm.NTipo_modular}">
-					<h:outputText value="#{tm.NTipo_modular}" />
+				<p:column headerText="Tipo Modular" sortBy="#{tm.nTipoModular}">
+					<h:outputText value="#{tm.nTipoModular}" />
 				</p:column>
 				<p:column headerText="Operación" exportable="false">
 					<h:commandLink action="listTipoModulares" value="Eliminar"
-						actionListener="#{TipoModularController.eliminar(tm)}"></h:commandLink>
+						actionListener="#{tipoModularController.eliminar(tm)}"></h:commandLink>
 				</p:column>
 				<p:column headerText="Operación" exportable="false">
 
 					<h:commandLink value="Modificar"
-						action="#{TipoModularController.Modifpre(tm)}"
+						action="#{tipoModularController.Modifpre(tm)}"
 						style="color:blue;" />
 				</p:column>
 
