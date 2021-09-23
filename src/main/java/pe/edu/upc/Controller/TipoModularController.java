@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import pe.edu.upc.entities.TipoModularEntities;
-import pe.edu.upc.entity.Specialty;
 import pe.edu.upc.service.ITipoModularService;
 
 @Named
@@ -21,6 +20,15 @@ public class TipoModularController {
 
 	private TipoModularEntities tipomodularCenter;
 	List<TipoModularEntities> listaTipoModulares;
+	private String mensaje = "error";
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
 
 	@PostConstruct
 	public void init() {
@@ -28,9 +36,9 @@ public class TipoModularController {
 		listaTipoModulares = new ArrayList<TipoModularEntities>();
 	}
 
-	public String newtipoModular() {
+	public String newTipoModular() {
 		this.setTipoModularCenter(new TipoModularEntities());
-		return "tipomodular.xhtml";
+		return "TipoModular.xhtml";
 	}
 
 	public void insert() {
@@ -40,30 +48,35 @@ public class TipoModularController {
 	public void list() {
 		listaTipoModulares = tmService.list();
 	}
-	
+
 	public void eliminar(TipoModularEntities vc) {
 		try {
 			tmService.eliminar(vc.getCid_tipo_modular());
 			list();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.getMessage();
 		}
 	}
-	
+
 	public void modificar() {
 		try {
 			tmService.modificar(this.tipomodularCenter);
 			this.list();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.getMessage();
 		}
 	}
-	
+
 	public String Modifpre(TipoModularEntities tm) {
 		this.setTipoModularCenter(tm);
 		return "TipoModularMod.xhtml";
 
 	}
+
+	public TipoModularEntities getTipoModularCenter() {
+		return tipomodularCenter;
+	}
+
 	// Getters and Setters
 	public void setTipoModularCenter(TipoModularEntities tipoModularCenter) {
 		// TODO Auto-generated method stub

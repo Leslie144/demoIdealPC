@@ -9,6 +9,7 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.ITipoUsuarioDao;
+import pe.edu.upc.entities.TipoModularEntities;
 import pe.edu.upc.entities.TipoUsuarioEntities;
 
 public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
@@ -38,5 +39,27 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 			// TODO: handle exception
 		}
 		return lista;
+	}
+
+	@Override
+	public void eliminar(int cid_tipo_usuario) {
+		// TODO Auto-generated method stub
+		TipoUsuarioEntities tue = new TipoUsuarioEntities();
+		try {
+			tue = em.getReference(TipoUsuarioEntities.class,cid_tipo_usuario);
+			em.remove(tue);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Override
+	public void modificar(TipoUsuarioEntities vc) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(vc);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

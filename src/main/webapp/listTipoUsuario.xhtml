@@ -8,11 +8,11 @@
 
 
 	<ui:define name="title">
-        .:Listado Fuente Modular:.
+        .:Listado Tipo de Usuario:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Fuente Modular </span>
+		<span>Tipo de Usuario </span>
 	</ui:define>
 
 	<ui:define name="content">
@@ -20,33 +20,33 @@
 		<h:form>
 			<div class="row"> <div class="col-sm-4"> <div
 				class="form-group"> <p:commandButton value="Nuevo"
-				action="#{TipoModularController.newTipoModular()}"
+				action="#{TipoUsuarioController.newTipoUsuario()}"
 				styleClass="btn btn-primary" ajax="false" /> </div> </div> </div>
 
 			<div class="row"> <div class="col-sm-12"> <div
 				class="form-group table-responsive box-table-class"> <p:dataTable
-				id="listTipoModulares" var="tm"
-				value="#{TipoModularController.listaTipoModulares}" paginator="true"
+				id="listTipoUsuarios" var="tu"
+				value="#{TipoUsuarioController.listaTipoUsuarios}" paginator="true"
 				paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
 				rows="10" styleClass="table table-bordered"
 				emptyMessage="No existen registros" rowIndexVar="item"
 				style="margin-bottom:0">
 
-				<p:column headerText="Id" sortBy="#{tm.Cid_tipo_modular}">
-					<h:outputText value="#{tm.Cid_tipo_modular}" />
+				<p:column headerText="Id" sortBy="#{tu.Cid_tipo_usuario}">
+					<h:outputText value="#{tu.Cid_tipo_usuario}" />
 				</p:column>
 
-				<p:column headerText="Tipo Modular" sortBy="#{tm.NTipo_modular}">
-					<h:outputText value="#{tm.NTipo_modular}" />
+				<p:column headerText="Tipo Usuario" sortBy="#{tu.NTipo_usuario}">
+					<h:outputText value="#{tu.NTipo_usuario}" />
 				</p:column>
 				<p:column headerText="Operación" exportable="false">
-					<h:commandLink action="listTipoModulares" value="Eliminar"
-						actionListener="#{TipoModularController.eliminar(tm)}"></h:commandLink>
+					<h:commandLink action="listTipoUsuarios" value="Eliminar"
+						actionListener="#{TipoUsuarioController.eliminar(tu)}"></h:commandLink>
 				</p:column>
 				<p:column headerText="Operación" exportable="false">
 
 					<h:commandLink value="Modificar"
-						action="#{TipoModularController.Modifpre(tm)}"
+						action="#{TipoUsuarioController.Modifpre(tm)}"
 						style="color:blue;" />
 				</p:column>
 

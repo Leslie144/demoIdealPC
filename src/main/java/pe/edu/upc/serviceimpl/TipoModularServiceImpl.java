@@ -14,7 +14,6 @@ import pe.edu.upc.service.ITipoModularService;
 @RequestScoped
 public class TipoModularServiceImpl implements ITipoModularService {
 
-	@SuppressWarnings("cdi-ambiguous-dependency")
 	@Inject
 	private ITipoModularDao tmDao;
 

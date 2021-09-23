@@ -28,4 +28,16 @@ public class TipoUsuarioServiceImpl implements ITipoUsuarioService {
 		return tuDao.list(); // #6
 	}
 
+	@Override
+	public void eliminar(int cid_tipo_usuario) {
+		// TODO Auto-generated method stub
+		tuDao.eliminar(cid_tipo_usuario);
+	}
+
+	@Override
+	public void modificar(TipoUsuarioEntities vc) {
+		// TODO Auto-generated method stub
+		tuDao.modificar(vc);
+	}
+
 }
