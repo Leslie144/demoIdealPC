@@ -17,6 +17,7 @@ public class DistritoDaoImpl implements IDistritoDao {
 	private EntityManager em;
 
 	@Transactional
+	@Override
 	public void insert(DistritoEntities vc) {
 		// TODO Auto-generated method stub
 		try {
@@ -28,6 +29,7 @@ public class DistritoDaoImpl implements IDistritoDao {
 	}
 	
 	@Transactional
+	@Override
 	public void delete(int idDistrito) {
 		try {
 			em.remove(idDistrito);

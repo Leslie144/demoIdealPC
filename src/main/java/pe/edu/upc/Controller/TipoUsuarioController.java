@@ -50,7 +50,7 @@ public class TipoUsuarioController {
 
 	public void eliminar(TipoUsuarioEntities vc) {
 		try {
-			tuService.eliminar(vc.getcidTipoUsuario());
+			tuService.eliminar(vc.getIdTipousuario());
 			list();
 		} catch (Exception e) {
 			e.getMessage();
@@ -73,6 +73,7 @@ public class TipoUsuarioController {
 	}
 
 	// Getters and Setters #4 except el service
+
 	public TipoUsuarioEntities getTipousuarioCenter() {
 		return tipousuarioCenter;
 	}
@@ -88,5 +89,7 @@ public class TipoUsuarioController {
 	public void setListaTipoUsuarios(List<TipoUsuarioEntities> listaTipoUsuarios) {
 		this.listaTipoUsuarios = listaTipoUsuarios;
 	}
+
+	
 
 }
