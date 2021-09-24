@@ -18,7 +18,7 @@ public class DistritoServiceImpl implements IDistritoService {
 	private IDistritoDao dDao;
 
 	// Methods #1
-	public void save(DistritoEntities vc) {
+	public void insert(DistritoEntities vc) {
 		// TODO Auto-generated method stub
 		dDao.insert(vc); // #5
 	}
@@ -32,4 +32,7 @@ public class DistritoServiceImpl implements IDistritoService {
 		return dDao.list(); // #6
 	}
 
+	public void update(DistritoEntities distrito) {
+		dDao.update(distrito);		
+	}
 }
