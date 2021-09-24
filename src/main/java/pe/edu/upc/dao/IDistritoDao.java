@@ -10,4 +10,6 @@ public interface IDistritoDao {
 	public void delete(int idDistrito);
 
 	public List<DistritoEntities> list();
+	
+	public void update(DistritoEntities distrito);
 }

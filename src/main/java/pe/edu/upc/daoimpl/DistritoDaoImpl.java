@@ -50,5 +50,14 @@ public class DistritoDaoImpl implements IDistritoDao {
 		}
 		return lista;
 	}
+	
+	@Transactional
+	public void update(DistritoEntities distrito) {
+		try {
+			em.merge(distrito);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 
 }

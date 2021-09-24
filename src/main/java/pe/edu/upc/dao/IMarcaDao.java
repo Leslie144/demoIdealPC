@@ -10,4 +10,6 @@ public interface IMarcaDao {
 	public void delete(int idMarca);
 
 	public List<MarcaEntities> list();
+	
+	public void update(MarcaEntities marca);
 }
