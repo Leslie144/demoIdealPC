@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -35,13 +36,14 @@ public class Usuario {
 	@Column(name = "contraseñaUsuario", length = 60, nullable = false)
 	private String contraseñaUsuario;
 	
+	@ManyToOne
 	@Column(name = "disTrito", length = 45, nullable = false)
 	private int disTrito;
 	
 	@Column(name = "fechaRegistro", length = 60, nullable = false)
 	private Date fechaRegistro;
 	
-	@Column(name = "imagenUsuario", length = 60, nullable = false)
+	@Column(name = "imagenUsuario", length = 300, nullable = false)
 	private String imagenUsuario;
 
 	public Usuario() {

@@ -14,37 +14,44 @@ public class DistritoEntities {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idDistrito;
 	
-	@Column(name = "nNombre_Distrito", length = 120, nullable = false)
-	private String nNombre_Distrito;
+	@Column(name = "nNombreDistrito", length = 120, nullable = false)
+	private String nNombreDistrito;
 
+	
 	public DistritoEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public DistritoEntities(int idDistrito, String nNombre_Distrito) {
+	public DistritoEntities(int idDistrito, String nNombreDistrito) {
 		super();
 		this.idDistrito = idDistrito;
-		this.nNombre_Distrito = nNombre_Distrito;
+		this.nNombreDistrito = nNombreDistrito;
 	}
+	
+	//Getters and setters
+
 
 	public int getIdDistrito() {
 		return idDistrito;
 	}
-	//Getters and setters
 
 	public void setIdDistrito(int idDistrito) {
 		this.idDistrito = idDistrito;
 	}
 
-	public String getnNombre_Distrito() {
-		return nNombre_Distrito;
+	public String getnNombreDistrito() {
+		return nNombreDistrito;
 	}
 
-	public void setnNombre_Distrito(String nNombre_Distrito) {
-		this.nNombre_Distrito = nNombre_Distrito;
+	public void setnNombreDistrito(String nNombreDistrito) {
+		this.nNombreDistrito = nNombreDistrito;
 	}
 
+	
+	
+
+	
 	
 	
 	

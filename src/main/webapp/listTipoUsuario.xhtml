@@ -32,12 +32,12 @@
 				emptyMessage="No existen registros" rowIndexVar="item"
 				style="margin-bottom:0">
 
-				<p:column headerText="Id" sortBy="#{tu.cidTipoUsuario}">
-					<h:outputText value="#{tu.cidTipoUsuario}" />
+				<p:column headerText="Id" sortBy="#{tu.idTipousuario}">
+					<h:outputText value="#{tu.idTipousuario}" />
 				</p:column>
 
-				<p:column headerText="Tipo Usuario" sortBy="#{tu.nTipoUsuario}">
-					<h:outputText value="#{tu.nTipoUsuario}" />
+				<p:column headerText="Tipo Usuario" sortBy="#{tu.nTipousuario}">
+					<h:outputText value="#{tu.nTipousuario}" />
 				</p:column>
 				<p:column headerText="Operación" exportable="false">
 					<h:commandLink action="listTipoUsuarios" value="Eliminar"
