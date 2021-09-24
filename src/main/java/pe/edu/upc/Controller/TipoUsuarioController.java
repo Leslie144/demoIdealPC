@@ -16,9 +16,17 @@ import pe.edu.upc.service.ITipoUsuarioService;
 public class TipoUsuarioController {
 	@Inject // #3
 	private ITipoUsuarioService tuService;
-
 	private TipoUsuarioEntities tipousuarioCenter;
 	List<TipoUsuarioEntities> listaTipoUsuarios;
+	private String mensaje = "error";
+
+	public String getMensaje() {
+		return mensaje;
+	}
+
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
+	}
 
 	@PostConstruct // #6
 	public void init() { // #5
@@ -28,7 +36,7 @@ public class TipoUsuarioController {
 
 	public String newTipoUsuario() { // #7
 		this.setTipousuarioCenter(new TipoUsuarioEntities());
-		return "tipousuario.xhtml";
+		return "TipoUsuario.xhtml";
 	}
 
 	public void insert() { // #8
@@ -39,7 +47,32 @@ public class TipoUsuarioController {
 		listaTipoUsuarios = tuService.list();
 	}
 
+	public void eliminar(TipoUsuarioEntities vc) {
+		try {
+			tuService.eliminar(vc.getIdTipousuario());
+			list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public void modificar() {
+		try {
+			tuService.modificar(this.tipousuarioCenter);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public String Modifpre(TipoUsuarioEntities tm) {
+		this.setTipousuarioCenter(tm);
+		return "TipoUsuariorMod.xhtml";
+
+	}
+
 	// Getters and Setters #4 except el service
+
 	public TipoUsuarioEntities getTipousuarioCenter() {
 		return tipousuarioCenter;
 	}
@@ -55,5 +88,7 @@ public class TipoUsuarioController {
 	public void setListaTipoUsuarios(List<TipoUsuarioEntities> listaTipoUsuarios) {
 		this.listaTipoUsuarios = listaTipoUsuarios;
 	}
+
+	
 
 }

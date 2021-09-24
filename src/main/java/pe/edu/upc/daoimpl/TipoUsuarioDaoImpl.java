@@ -17,6 +17,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 	private EntityManager em;
 
 	@Transactional
+	@Override
 	public void insert(TipoUsuarioEntities vc) {
 		// TODO Auto-generated method stub
 		try {
@@ -28,6 +29,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<TipoUsuarioEntities> list() {
 		// TODO Auto-generated method stub
 		List<TipoUsuarioEntities> lista = new ArrayList<TipoUsuarioEntities>();
@@ -38,5 +40,27 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 			// TODO: handle exception
 		}
 		return lista;
+	}
+
+	@Override
+	public void eliminar(int cid_tipo_usuario) {
+		// TODO Auto-generated method stub
+		TipoUsuarioEntities tue = new TipoUsuarioEntities();
+		try {
+			tue = em.getReference(TipoUsuarioEntities.class,cid_tipo_usuario);
+			em.remove(tue);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Override
+	public void modificar(TipoUsuarioEntities vc) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(vc);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

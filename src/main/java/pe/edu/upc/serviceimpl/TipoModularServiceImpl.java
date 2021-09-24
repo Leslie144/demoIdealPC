@@ -26,4 +26,16 @@ public class TipoModularServiceImpl implements ITipoModularService {
 		// TODO Auto-generated method stub
 		return tmDao.list();
 	}
+
+	@Override
+	public void eliminar(int cid_tipo_modular) {
+		// TODO Auto-generated method stub
+		tmDao.eliminar(cid_tipo_modular);
+	}
+
+	@Override
+	public void modificar(TipoModularEntities vc) {
+		// TODO Auto-generated method stub
+		tmDao.modificar(vc);
+	}
 }

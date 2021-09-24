@@ -16,16 +16,28 @@ public class TipoUAServiceImpl implements ITipoUAService {
 
 	@Inject // #3
 	private ITipoUADao tuaDao;
-
+	@Override
 	// Methods #1
 	public void insert(TipoUAEntities vc) {
 		// TODO Auto-generated method stub
 		tuaDao.insert(vc); // #5
 	}
-
+	@Override
 	public List<TipoUAEntities> list() {
 		// TODO Auto-generated method stub
 		return tuaDao.list(); // #6
+	}
+
+	@Override
+	public void delete(int id_tua) {
+		// TODO Auto-generated method stub
+		tuaDao.delete(id_tua);
+	}
+
+	@Override
+	public void update(TipoUAEntities vc) {
+		// TODO Auto-generated method stub
+		tuaDao.update(vc);
 	}
 
 }

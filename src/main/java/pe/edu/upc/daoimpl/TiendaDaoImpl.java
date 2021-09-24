@@ -13,7 +13,7 @@ import pe.edu.upc.dao.ITiendaDao;
 import pe.edu.upc.entities.Tienda;
 
 public class TiendaDaoImpl implements ITiendaDao{
-	@PersistenceContext(unitName= "ProyectoIdealPc")
+	@PersistenceContext(unitName= "demoIdealPC")
 	private EntityManager em;
 	
 	@Transactional
@@ -36,6 +36,26 @@ public class TiendaDaoImpl implements ITiendaDao{
 			System.out.println("Error al listar Tienda");
 		}
 		return lista;
+	}
+	@Transactional
+	@Override
+	public void eliminar(int idTienda) {
+		Tienda tiend =new Tienda();
+		try {
+			tiend=em.getReference(Tienda.class, idTienda);
+			em.remove(tiend);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	@Transactional
+	@Override
+	public void modificar(Tienda tienda) {
+		try {
+			em.merge(tienda);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }

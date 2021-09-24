@@ -28,7 +28,7 @@ public class DistritoController {
 	}
 
 	public String newDistrito() { // #7
-		this.setDistritoCenter(new DistritoEntities());
+		this.setDistrito(new DistritoEntities());
 		return "distrito.xhtml";
 	}
 
@@ -38,11 +38,11 @@ public class DistritoController {
 	}
 	
 	public void delete(DistritoEntities distrito) {
-		dService.delete(distrito.getCid_distrito());
+		dService.delete(distrito.getIdDistrito());
 		list();
 	}
 
-	public void list() { 
+	public void list() { // #9
 		listaDistrito = dService.list();
 	}
 	
@@ -56,6 +56,7 @@ public class DistritoController {
 	}
 
 	// Getters and Setters #4 except el service
+
 	public IDistritoService getdService() {
 		return dService;
 	}
@@ -64,11 +65,13 @@ public class DistritoController {
 		this.dService = dService;
 	}
 
-	public DistritoEntities getDistritoCenter() {
+	public DistritoEntities getDistrito() {
 		return distrito;
 	}
 
-	public void setDistritoCenter(DistritoEntities distritoCenter) {
-		this.distrito = distritoCenter;
+	public void setDistrito(DistritoEntities distrito) {
+		this.distrito = distrito;
 	}
+
+	
 }

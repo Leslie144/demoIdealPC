@@ -17,6 +17,7 @@ public class TipoUADaoImpl implements ITipoUADao {
 	private EntityManager em;
 
 	@Transactional
+	@Override
 	public void insert(TipoUAEntities vc) {
 		// TODO Auto-generated method stub
 		try {
@@ -28,6 +29,7 @@ public class TipoUADaoImpl implements ITipoUADao {
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<TipoUAEntities> list() {
 		// TODO Auto-generated method stub
 		List<TipoUAEntities> lista = new ArrayList<TipoUAEntities>();
@@ -38,5 +40,29 @@ public class TipoUADaoImpl implements ITipoUADao {
 			// TODO: handle exception
 		}
 		return lista;
+	}
+
+	@Override
+	public void delete(int id_tua) {
+		// TODO Auto-generated method stub
+		TipoUAEntities tipo_ua = new TipoUAEntities();
+		try {
+			tipo_ua = em.getReference(TipoUAEntities.class, tipo_ua);
+			em.remove(id_tua);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Override
+	public void update(TipoUAEntities vc) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(vc);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
 	}
 }

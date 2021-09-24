@@ -16,15 +16,27 @@ public class TipoRecomendacionServiceImpl implements ITipoRecomendacionService {
 
 	@Inject
 	private ITipoRecomendacionDao trDao;
-
+	@Override
 	// Methods #1
 	public void insert(TipoRecomendacionEntities vc) {
 		// TODO Auto-generated method stub
 		trDao.insert(vc); // #5
 	}
-
+	@Override
 	public List<TipoRecomendacionEntities> list() {
 		// TODO Auto-generated method stub
 		return trDao.list(); // #6
+	}
+
+	@Override
+	public void delete(int id_recomendacion) {
+		// TODO Auto-generated method stub
+		trDao.delete(id_recomendacion);
+	}
+
+	@Override
+	public void update(TipoRecomendacionEntities vc) {
+		// TODO Auto-generated method stub
+		trDao.update(vc);
 	}
 }
