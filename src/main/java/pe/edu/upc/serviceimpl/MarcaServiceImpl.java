@@ -35,5 +35,7 @@ public class MarcaServiceImpl implements IMarcaService {
 	public void update(MarcaEntities marca) {
 		mDao.update(marca);
 	}
+	
+	
 }
 

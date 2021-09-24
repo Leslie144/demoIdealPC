@@ -32,7 +32,7 @@ public class MarcaController {
 	}
 
 	public void insert() { // #8
-		mService.save(marcaCenter);
+		mService.insert(marcaCenter);
 		cleanMarca();
 	}
 	
@@ -46,7 +46,7 @@ public class MarcaController {
 	}
 	
 	public void update() { // #8
-		mService.save(marcaCenter);
+		mService.update(marcaCenter);
 		cleanMarca();
 	}
 
