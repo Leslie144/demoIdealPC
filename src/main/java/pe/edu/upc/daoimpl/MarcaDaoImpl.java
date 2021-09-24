@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IMarcaDao;
 import pe.edu.upc.entities.MarcaEntities;
@@ -44,5 +45,14 @@ public class MarcaDaoImpl implements IMarcaDao {
 			// TODO: handle exception
 		}
 		return lista;
+	}
+	
+	@Transactional
+	public void update(MarcaEntities marca) {
+		try {
+			em.merge(marca);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

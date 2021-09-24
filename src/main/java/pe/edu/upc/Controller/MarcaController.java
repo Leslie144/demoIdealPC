@@ -18,12 +18,12 @@ public class MarcaController {
 	@Inject // #3
 	private IMarcaService mService;
 
-	private MarcaEntities marcaCenter;
+	private MarcaEntities marca;
 	List<MarcaEntities> listaMarca;
 
 	@PostConstruct // #6
 	private void init() { // #5
-		marcaCenter = new MarcaEntities();
+		marca = new MarcaEntities();
 		listaMarca = new ArrayList<MarcaEntities>();
 		this.list();
 	}
@@ -34,7 +34,7 @@ public class MarcaController {
 	}
 
 	public void insert() { // #8
-		mService.save(marcaCenter);
+		mService.insert(marca);
 		cleanMarca();
 	}
 	
@@ -48,8 +48,8 @@ public class MarcaController {
 	}
 	
 	public void update() { // #8
-		mService.save(marcaCenter);
-		cleanMarca();
+		mService.update(this.marca);
+		this.list();
 	}
 
 	public void list() { // #9
@@ -58,11 +58,11 @@ public class MarcaController {
 
 	// Getters and Setters #4 except el service
 	public MarcaEntities getMarcaCenter() {
-		return marcaCenter;
+		return marca;
 	}
 
 	public void setMarcaCenter(MarcaEntities marcaCenter) {
-		this.marcaCenter = marcaCenter;
+		this.marca = marcaCenter;
 	}
 
 	public List<MarcaEntities> getListaMarca() {
