@@ -8,43 +8,43 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "DISTRITO")
+@Table(name = "distrito")
 public class DistritoEntities {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idDistrito;
 	
-	@Column(name = "Nnombre_distrito", length = 120, nullable = false)
-	private String nombreDistrito;
+	@Column(name = "nNombre_Distrito", length = 120, nullable = false)
+	private String nNombre_Distrito;
 
 	public DistritoEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public DistritoEntities(int idDistrito, String nombreDistrito) {
+	public DistritoEntities(int idDistrito, String nNombre_Distrito) {
 		super();
 		this.idDistrito = idDistrito;
-		this.nombreDistrito = nombreDistrito;
+		this.nNombre_Distrito = nNombre_Distrito;
 	}
 
 	public int getIdDistrito() {
 		return idDistrito;
 	}
+	//Getters and setters
 
 	public void setIdDistrito(int idDistrito) {
 		this.idDistrito = idDistrito;
 	}
 
-	public String getNombreDistrito() {
-		return nombreDistrito;
+	public String getnNombre_Distrito() {
+		return nNombre_Distrito;
 	}
 
-	public void setNombreDistrito(String nombreDistrito) {
-		this.nombreDistrito = nombreDistrito;
+	public void setnNombre_Distrito(String nNombre_Distrito) {
+		this.nNombre_Distrito = nNombre_Distrito;
 	}
 
-	
 	
 	
 	

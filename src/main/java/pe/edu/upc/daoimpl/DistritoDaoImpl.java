@@ -15,6 +15,7 @@ public class DistritoDaoImpl implements IDistritoDao {
 
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
+
 	@Transactional
 	@Override
 	public void insert(DistritoEntities vc) {
@@ -26,9 +27,18 @@ public class DistritoDaoImpl implements IDistritoDao {
 			System.out.println("Error al insertar un Distrito");
 		}
 	}
+	
+	@Transactional
+	@Override
+	public void delete(int idDistrito) {
+		try {
+			em.remove(idDistrito);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar distrito");
+		}
+	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<DistritoEntities> list() {
 		// TODO Auto-generated method stub
 		List<DistritoEntities> lista = new ArrayList<DistritoEntities>();

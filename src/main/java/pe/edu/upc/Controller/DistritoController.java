@@ -16,29 +16,47 @@ import pe.edu.upc.service.IDistritoService;
 public class DistritoController {
 	@Inject // #3
 	private IDistritoService dService;
-	private DistritoEntities distritoCenter;
+
+	private DistritoEntities distrito;
 	List<DistritoEntities> listaDistrito;
 
 	@PostConstruct // #6
 	public void init() { // #5
-		distritoCenter = new DistritoEntities();
+		distrito = new DistritoEntities();
 		listaDistrito = new ArrayList<DistritoEntities>();
+		this.list();
 	}
 
 	public String newDistrito() { // #7
-		this.setDistritoCenter(new DistritoEntities());
+		this.setDistrito(new DistritoEntities());
 		return "distrito.xhtml";
 	}
 
 	public void insert() { // #8
-		dService.insert(distritoCenter);
+		dService.save(distrito);
+		cleanDistrito();
+	}
+	
+	public void delete(DistritoEntities distrito) {
+		dService.delete(distrito.getIdDistrito());
+		list();
 	}
 
 	public void list() { // #9
 		listaDistrito = dService.list();
 	}
+	
+	public void cleanDistrito() {
+		this.init();
+	}
+	
+	public void update() { // #8
+		dService.save(distrito);
+		cleanDistrito();
+	}
 
 	// Getters and Setters #4 except el service
+
 	public IDistritoService getdService() {
 		return dService;
 	}
@@ -47,11 +65,13 @@ public class DistritoController {
 		this.dService = dService;
 	}
 
-	public DistritoEntities getDistritoCenter() {
-		return distritoCenter;
+	public DistritoEntities getDistrito() {
+		return distrito;
 	}
 
-	public void setDistritoCenter(DistritoEntities distritoCenter) {
-		this.distritoCenter = distritoCenter;
+	public void setDistrito(DistritoEntities distrito) {
+		this.distrito = distrito;
 	}
+
+	
 }

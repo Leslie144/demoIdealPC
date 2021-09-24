@@ -41,4 +41,28 @@ public class TipoUADaoImpl implements ITipoUADao {
 		}
 		return lista;
 	}
+
+	@Override
+	public void delete(int id_tua) {
+		// TODO Auto-generated method stub
+		TipoUAEntities tipo_ua = new TipoUAEntities();
+		try {
+			tipo_ua = em.getReference(TipoUAEntities.class, tipo_ua);
+			em.remove(id_tua);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@Override
+	public void update(TipoUAEntities vc) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(vc);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
 }

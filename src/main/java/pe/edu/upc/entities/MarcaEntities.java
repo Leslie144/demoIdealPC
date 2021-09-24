@@ -8,29 +8,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "MARCA")
+@Table(name = "marca")
 public class MarcaEntities {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idMarca;
 
-	@Column(name = "nombreMarca", length = 100, nullable = false)
-	private String nombreMarca;
+	@Column(name = "nMarca", length = 100, nullable = false)
+	private String nMarca;
 
-	@Column(name = "turlMarca", length = 300, nullable = false)
-	private String turlMarca;
+	@Column(name = "urlMarca", length = 300, nullable = false)
+	private String urlMarca;
 
 	public MarcaEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public MarcaEntities(int idMarca, String nombreMarca, String turlMarca) {
+	public MarcaEntities(int idMarca, String nMarca, String urlMarca) {
 		super();
 		this.idMarca = idMarca;
-		this.nombreMarca =nombreMarca;
-		this.turlMarca = turlMarca;
+		this.nMarca = nMarca;
+		this.urlMarca = urlMarca;
 	}
+
+	// Getters and setters
 
 	public int getIdMarca() {
 		return idMarca;
@@ -40,21 +42,22 @@ public class MarcaEntities {
 		this.idMarca = idMarca;
 	}
 
-	public String getNombreMarca() {
-		return nombreMarca;
+	public String getnMarca() {
+		return nMarca;
 	}
 
-	public void setNombreMarca(String nombreMarca) {
-		this.nombreMarca = nombreMarca;
+	public void setnMarca(String nMarca) {
+		this.nMarca = nMarca;
 	}
 
-	public String getTurlMarca() {
-		return turlMarca;
+	public String getUrlMarca() {
+		return urlMarca;
 	}
 
-	public void setTurlMarca(String turlMarca) {
-		this.turlMarca = turlMarca;
+	public void setUrlMarca(String urlMarca) {
+		this.urlMarca = urlMarca;
 	}
+
 
 	
 }
