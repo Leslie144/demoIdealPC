@@ -35,8 +35,8 @@ public class Usuario {
 	@Column(name = "contraseñaUsuario", length = 60, nullable = false)
 	private String contraseñaUsuario;
 	
-	@Column(name = "distrito", length = 45, nullable = false)
-	private int distrito;
+	@Column(name = "disTrito", length = 45, nullable = false)
+	private int disTrito;
 	
 	@Column(name = "fechaRegistro", length = 60, nullable = false)
 	private Date fechaRegistro;
@@ -48,7 +48,7 @@ public class Usuario {
 		super();
 	}
 
-	public Usuario(int idUsuario, int tipoUsuario,int distrito ,String nombreUsuario, String correoUsuario, String estadoUsuario,String telefonoUsuario, String contraseñaUsuario,Date fechaRegistro, String imagenUsuario) {
+	public Usuario(int idUsuario, int tipoUsuario,int disTrito ,String nombreUsuario, String correoUsuario, String estadoUsuario,String telefonoUsuario, String contraseñaUsuario,Date fechaRegistro, String imagenUsuario) {
 		super();
 		this.idUsuario=idUsuario;
 		this.tipoUsuario=tipoUsuario;
@@ -57,7 +57,7 @@ public class Usuario {
 		this.estadoUsuario=estadoUsuario;
 		this.telefonoUsuario=telefonoUsuario;
 		this.contraseñaUsuario=contraseñaUsuario;
-		this.distrito=distrito;
+		this.disTrito=disTrito;
 		this.fechaRegistro=fechaRegistro;
 		this.imagenUsuario=imagenUsuario;
 		
@@ -119,12 +119,12 @@ public class Usuario {
 		this.contraseñaUsuario = contraseñaUsuario;
 	}
 
-	public int getDistrito() {
-		return distrito;
+	public int getDisTrito() {
+		return disTrito;
 	}
 
-	public void setDistrito(int distrito) {
-		this.distrito = distrito;
+	public void setDisTrito(int disTrito) {
+		this.disTrito = disTrito;
 	}
 
 	public Date getFechaRegistro() {
@@ -142,6 +142,10 @@ public class Usuario {
 	public void setImagenUsuario(String imagenUsuario) {
 		this.imagenUsuario = imagenUsuario;
 	}
+
+	
+
+	
 	
 	
 

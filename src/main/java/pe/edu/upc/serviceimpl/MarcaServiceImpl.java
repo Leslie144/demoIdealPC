@@ -32,3 +32,4 @@ public class MarcaServiceImpl implements IMarcaService {
 		return mDao.list(); // #6
 	}
 }
+

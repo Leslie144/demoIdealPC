@@ -16,7 +16,6 @@ import pe.edu.upc.service.ITipoUsuarioService;
 public class TipoUsuarioController {
 	@Inject // #3
 	private ITipoUsuarioService tuService;
-
 	private TipoUsuarioEntities tipousuarioCenter;
 	List<TipoUsuarioEntities> listaTipoUsuarios;
 	private String mensaje = "error";
