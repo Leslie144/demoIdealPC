@@ -45,13 +45,22 @@ public class MarcaController {
 		this.init();
 	}
 
-	public void update() { // #8
-		mService.update(marca);
-		cleanMarca();
-	}
-
 	public void list() { // #9
 		listaMarca = mService.list();
+	}
+	
+	public String updatePre(MarcaEntities marca) { // #8
+		this.setMarca(marca);
+		return"marcaMod.xhtml";
+	}
+	
+	public void update() {
+		try {
+			mService.update(this.marca);
+			this.list();
+		}catch(Exception ex) {
+			
+		}
 	}
 
 	// Getters and Setters #4 except el service

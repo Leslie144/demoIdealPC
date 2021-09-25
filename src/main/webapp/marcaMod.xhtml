@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Modifcar Marca:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Marca</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idMarca" value="idMarca"
+				styleClass="control-label" />
+
+			<p:inputText autocomplete="off" id="idMarca"
+				styleClass="form-control" value="#{marcaController.marca.idMarca}"
+				required="true" />
+
+			<h:outputLabel for="nMarca" value="nMarca "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nMarca" styleClass="form-control"
+				value="#{marcaController.marca.nMarca}" maxlength="30"
+				required="true" />
+
+			<h:outputLabel for="urlMarca" value="urlMarca"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="urlMarca"
+				styleClass="form-control" value="#{marcaController.marca.urlMarca}"
+				required="true" />
+			<br />
+
+
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{marcaController.update()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listMarca?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listMarca?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
