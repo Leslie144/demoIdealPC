@@ -27,10 +27,14 @@ public class MarcaDaoImpl implements IMarcaDao {
 			System.out.println("Error al insertar una Marca: " + e);
 		}
 	}
-
+	
+	@Transactional
+	@Override
 	public void delete(int idMarca) {
+		MarcaEntities mar = new MarcaEntities();
 		try {
-			em.remove(idMarca);
+			mar = em.getReference(MarcaEntities.class, idMarca);
+			em.remove(mar);
 		} catch (Exception e) {
 			System.out.println("Error al eliminar una Marca");
 		}
