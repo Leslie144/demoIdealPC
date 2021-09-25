@@ -32,11 +32,12 @@ public class TipoUsuarioController {
 	public void init() { // #5
 		tipousuarioCenter = new TipoUsuarioEntities();
 		listaTipoUsuarios = new ArrayList<TipoUsuarioEntities>();
+		this.list();
 	}
 
 	public String newTipoUsuario() { // #7
 		this.setTipousuarioCenter(new TipoUsuarioEntities());
-		return "TipoUsuario.xhtml";
+		return "tipoUsuario.xhtml";
 	}
 
 	public void insert() { // #8
@@ -88,7 +89,5 @@ public class TipoUsuarioController {
 	public void setListaTipoUsuarios(List<TipoUsuarioEntities> listaTipoUsuarios) {
 		this.listaTipoUsuarios = listaTipoUsuarios;
 	}
-
-	
 
 }

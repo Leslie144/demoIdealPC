@@ -39,6 +39,10 @@
 				<p:column headerText="Tipo Usuario" sortBy="#{tu.nTipousuario}">
 					<h:outputText value="#{tu.nTipousuario}" />
 				</p:column>
+				
+				
+				
+				
 				<p:column headerText="Operación" exportable="false">
 					<h:commandLink action="listTipoUsuarios" value="Eliminar"
 						actionListener="#{tipoUsuarioController.eliminar(tu)}"></h:commandLink>

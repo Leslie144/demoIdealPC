@@ -7,24 +7,24 @@
 	template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Tipo Modular:.
+        .:Registro de Tipo Usuario:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Tipo Modular</span>
+		<span>Tipo Usuario</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="Cid_tipo_usuario" value="Id "
+			<h:outputLabel for="idTipousuario" value="Id "
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Cid_tipo_usuario"
+			<p:inputText autocomplete="off" id="idTipousuario"
 				styleClass="form-control"
 				value="#{tipoUsuarioController.tipousuarioCenter.idTipousuario}" required="true" />
 		
-			<h:outputLabel for="Ntipo_usuario" value="TipoUsuario"
+			<h:outputLabel for="nTipousuario" value="Tipo Usuario"
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Ntipo_usuario"
+			<p:inputText autocomplete="off" id="nTipousuario"
 				styleClass="form-control"
 				value="#{tipoUsuarioController.tipousuarioCenter.nTipousuario}"
 				maxlength="100" required="true" validatorMessage="#{tipoUsuarioController.mensaje}">
