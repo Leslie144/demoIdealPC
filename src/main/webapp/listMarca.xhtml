@@ -55,6 +55,11 @@
 									actionListener="#{marcaController.delete(s)}" />
 							</p:column>
 
+							<p:column headerText="Operación 2" exportable="false">
+								<h:commandLink value="Modificar"
+									action="#{marcaController.updatePre(s)}" style="color:blue;" />
+							</p:column>
+
 
 						</p:dataTable>
 					</div>

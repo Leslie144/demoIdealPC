@@ -27,7 +27,7 @@ public class MarcaDaoImpl implements IMarcaDao {
 			System.out.println("Error al insertar una Marca: " + e);
 		}
 	}
-	
+
 	@Transactional
 	@Override
 	public void delete(int idMarca) {
@@ -53,13 +53,26 @@ public class MarcaDaoImpl implements IMarcaDao {
 		}
 		return lista;
 	}
-
+	
 	@Transactional
+	@Override
 	public void update(MarcaEntities marca) {
 		try {
 			em.merge(marca);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error al actualizar una Marca: " + e);
 		}
 	}
+
+	/*@Transactional
+	@Override
+	public void update(MarcaEntities marca) {
+		MarcaEntities mar = new MarcaEntities();
+		try {
+			mar = em.getReference(MarcaEntities.class, marca);
+			em.merge(mar);
+		} catch (Exception e) {
+			System.out.println("Error al actualizar una Marca: " + e);
+		}
+	}*/
 }
