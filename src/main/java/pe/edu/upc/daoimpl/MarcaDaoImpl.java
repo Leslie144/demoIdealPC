@@ -16,16 +16,18 @@ public class MarcaDaoImpl implements IMarcaDao {
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
 
-	public void insert(MarcaEntities vc) {
+	@Transactional
+	@Override
+	public void insert(MarcaEntities ma) {
 		// TODO Auto-generated method stub
 		try {
-			em.persist(vc);
+			em.persist(ma);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error al insertar una Marca");
+			System.out.println("Error al insertar una Marca: " + e);
 		}
 	}
-	
+
 	public void delete(int idMarca) {
 		try {
 			em.remove(idMarca);
@@ -35,18 +37,19 @@ public class MarcaDaoImpl implements IMarcaDao {
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<MarcaEntities> list() {
 		// TODO Auto-generated method stub
 		List<MarcaEntities> lista = new ArrayList<MarcaEntities>();
 		try {
-			Query q = em.createQuery("select v from TIPO_USUARIO v");
+			Query q = em.createQuery("from MarcaEntities m");
 			lista = (List<MarcaEntities>) q.getResultList();
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Error al listar una Marca: " + e);
 		}
 		return lista;
 	}
-	
+
 	@Transactional
 	public void update(MarcaEntities marca) {
 		try {
