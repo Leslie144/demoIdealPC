@@ -34,7 +34,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 		// TODO Auto-generated method stub
 		List<TipoUsuarioEntities> lista = new ArrayList<TipoUsuarioEntities>();
 		try {
-			Query q = em.createQuery("select v from tipousuario v");
+			Query q = em.createQuery("select v from tipoUsuario v");
 			lista = (List<TipoUsuarioEntities>) q.getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception
