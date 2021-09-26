@@ -1,5 +1,6 @@
 package pe.edu.upc.Controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,8 @@ import pe.edu.upc.service.IDistritoService;
 
 @Named // #1
 @RequestScoped // #2
-public class DistritoController {
+public class DistritoController implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Inject // #3
 	private IDistritoService dService;
 	private DistritoEntities distritoCenter;
@@ -21,8 +23,9 @@ public class DistritoController {
 
 	@PostConstruct // #6
 	public void init() { // #5
-		distritoCenter = new DistritoEntities();
-		listaDistrito = new ArrayList<DistritoEntities>();
+		this.listaDistrito=new ArrayList<DistritoEntities>();
+		this.distritoCenter=new DistritoEntities();
+		this.list();
 	}
 
 	public String newDistrito() { // #7
@@ -31,22 +34,65 @@ public class DistritoController {
 	}
 
 	public void insert() { // #8
-		dService.insert(distritoCenter);
+		try {
+			dService.insert(distritoCenter);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+	public void eliminar(DistritoEntities dist) {
+		try {
+			dService.eliminar(dist.getIdDistrito());
+			list();
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
 
 	public void list() { // #9
-		listaDistrito = dService.list();
+		try {
+			listaDistrito=dService.list();
+		}catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	public void clean() {
+		this.init();
+	}
+	public void findByName() {
+		try {
+			if(distritoCenter.getNombreDistrito().isEmpty()) {
+				this.list();
+			}else {
+				listaDistrito=this.dService.finByNameDistrito(this.getDistritoCenter());
+			}
+		}catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	public void modificar() {
+		try {
+			dService.modificar(this.distritoCenter);
+			this.list();
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
 
-	// Getters and Setters #4 except el service
-	public IDistritoService getdService() {
-		return dService;
+	public String Modifpre(DistritoEntities spec) {
+		this.setDistritoCenter(spec);
+		return "distritomod.xhtml";
 	}
-
-	public void setdService(IDistritoService dService) {
-		this.dService = dService;
-	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public DistritoEntities getDistritoCenter() {
 		return distritoCenter;
 	}
@@ -54,4 +100,18 @@ public class DistritoController {
 	public void setDistritoCenter(DistritoEntities distritoCenter) {
 		this.distritoCenter = distritoCenter;
 	}
+
+	public List<DistritoEntities> getListaDistrito() {
+		return listaDistrito;
+	}
+
+	public void setListaDistrito(List<DistritoEntities> listaDistrito) {
+		this.listaDistrito = listaDistrito;
+	}
+
+	
+	
+	
+	
+	
 }

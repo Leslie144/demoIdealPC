@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "DISTRITO")
 public class DistritoEntities {
@@ -14,7 +15,7 @@ public class DistritoEntities {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idDistrito;
 	
-	@Column(name = "Nnombre_distrito", length = 120, nullable = false)
+	@Column(name = "nombreDistrito", length = 120, nullable = false)
 	private String nombreDistrito;
 
 	public DistritoEntities() {
@@ -44,7 +45,28 @@ public class DistritoEntities {
 		this.nombreDistrito = nombreDistrito;
 	}
 
-	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idDistrito;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DistritoEntities other = (DistritoEntities) obj;
+		if (idDistrito != other.idDistrito)
+			return false;
+		return true;
+	}
+
 	
 	
 	

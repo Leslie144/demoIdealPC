@@ -15,15 +15,15 @@ public class DistritoDaoImpl implements IDistritoDao {
 
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
+
 	@Transactional
 	@Override
 	public void insert(DistritoEntities vc) {
-		// TODO Auto-generated method stub
 		try {
 			em.persist(vc);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error al insertar un Distrito");
+			System.out.println(e.getMessage());
 		}
 	}
 
@@ -33,7 +33,7 @@ public class DistritoDaoImpl implements IDistritoDao {
 		// TODO Auto-generated method stub
 		List<DistritoEntities> lista = new ArrayList<DistritoEntities>();
 		try {
-			Query q = em.createQuery("select v from DISTRTITO v");
+			Query q = em.createQuery("from DistritoEntities v");
 			lista = (List<DistritoEntities>) q.getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -41,4 +41,38 @@ public class DistritoDaoImpl implements IDistritoDao {
 		return lista;
 	}
 
+	@Transactional
+	@Override
+	public void eliminar(int idDistrito) {
+		DistritoEntities dis = new DistritoEntities();
+		try {
+			dis = em.getReference(DistritoEntities.class, idDistrito);
+			em.remove(dis);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<DistritoEntities> finByNameDistrito(DistritoEntities de) {
+		List<DistritoEntities> lista = new ArrayList<DistritoEntities>();
+		try {
+			Query q = em.createQuery("from DistritoEntities m where m.nombreDistrito like ?1");
+			q.setParameter(1, "%" + de.getNombreDistrito() + "%");
+			lista = (List<DistritoEntities>) q.getResultList();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return lista;
+	}
+	@Transactional
+	@Override
+	public void modificar(DistritoEntities distrito) {
+		try {
+			em.merge(distrito);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }

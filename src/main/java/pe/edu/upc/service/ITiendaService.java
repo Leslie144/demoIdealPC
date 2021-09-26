@@ -1,7 +1,6 @@
 package pe.edu.upc.service;
 
 import java.util.List;
-
 import pe.edu.upc.entities.Tienda;
 
 public interface ITiendaService {
@@ -9,4 +8,5 @@ public interface ITiendaService {
 	public void eliminar(int idTienda);
 	public List<Tienda>list();
 	public void modificar(Tienda tienda);
+	public List<Tienda> finByNameTienda(Tienda tienda);
 }
