@@ -16,7 +16,6 @@ import pe.edu.upc.service.ITipoPanelService;
 public class TipoPanelController {
 	@Inject // #3
 	private ITipoPanelService tpService;
-
 	private TipoPanelEntities tipopanelCenter;
 	List<TipoPanelEntities> listaTipoPanel;
 
@@ -33,13 +32,29 @@ public class TipoPanelController {
 
 	public void insert() { // #8
 		tpService.insert(tipopanelCenter);
+		cleanTipoPanel();
 	}
 
 	public void list() { // #9
 		listaTipoPanel = tpService.list();
 	}
 
+	public void delete(TipoPanelEntities tipopanel) {
+		tpService.delete(tipopanel.getIdTipoPanel());
+	}
+	
+	public void cleanTipoPanel() {
+		this.init();
+	}
+	
+	public void update() { // #8
+		tpService.update(tipopanelCenter);
+		cleanTipoPanel();
+	}
+	
+	
 	// Getters and Setters #4 except el service
+
 	public TipoPanelEntities getTipopanelCenter() {
 		return tipopanelCenter;
 	}
@@ -55,5 +70,7 @@ public class TipoPanelController {
 	public void setListaTipoPanel(List<TipoPanelEntities> listaTipoPanel) {
 		this.listaTipoPanel = listaTipoPanel;
 	}
+
+	
 
 }

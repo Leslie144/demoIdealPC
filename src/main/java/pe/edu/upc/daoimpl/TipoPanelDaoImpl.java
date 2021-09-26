@@ -39,4 +39,25 @@ public class TipoPanelDaoImpl implements ITipoPanelDao {
 		}
 		return lista;
 	}
+
+	@Transactional
+	@Override
+	public void delete(int idTipoPanel) {
+		TipoPanelEntities tip = new TipoPanelEntities();
+		try {
+			tip = em.getReference(TipoPanelEntities.class, idTipoPanel);
+			em.remove(tip);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar un Tipo de Panel");
+		}
+	}
+	
+	@Transactional
+	public void update(TipoPanelEntities tipopanel) {
+		try {
+			em.merge(tipopanel);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }

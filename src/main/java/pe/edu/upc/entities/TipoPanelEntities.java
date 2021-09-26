@@ -6,42 +6,46 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+ 
 @Entity
-@Table(name = "TIPO_PANEL")
+@Table(name = "tipoPanel")
 public class TipoPanelEntities {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int Cid_tipo_panel;
+	private int idTipoPanel;
 
-	@Column(name = "Ntipo_panel", length = 100, nullable = false)
-	private String Ntipo_panel;
+	@Column(name = "nTipoPanel", length = 100, nullable = false)
+	private String nTipoPanel;
 
 	public TipoPanelEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TipoPanelEntities(int cid_tipo_panel, String ntipo_panel) {
+	public TipoPanelEntities(int idTipoPanel, String nTipoPanel) {
 		super();
-		Cid_tipo_panel = cid_tipo_panel;
-		Ntipo_panel = ntipo_panel;
+		this.idTipoPanel = idTipoPanel;
+		this.nTipoPanel = nTipoPanel;
 	}
 
 	// Getters and setters
-	public int getCid_tipo_panel() {
-		return Cid_tipo_panel;
+	public int getIdTipoPanel() {
+		return idTipoPanel;
 	}
 
-	public void setCid_tipo_panel(int cid_tipo_panel) {
-		Cid_tipo_panel = cid_tipo_panel;
+	public void setIdTipoPanel(int idTipoPanel) {
+		this.idTipoPanel = idTipoPanel;
 	}
 
-	public String getNtipo_panel() {
-		return Ntipo_panel;
+	public String getnTipoPanel() {
+		return nTipoPanel;
 	}
 
-	public void setNtipo_panel(String ntipo_panel) {
-		Ntipo_panel = ntipo_panel;
+	public void setnTipoPanel(String nTipoPanel) {
+		this.nTipoPanel = nTipoPanel;
 	}
+
+
+	
+}
