@@ -39,6 +39,15 @@ public class TamanoMBController {
 		listaTamanoMB = tmbService.list();
 	}
 
+	public void delete(TamanoMBEntities tamanomb) {
+		tmbService.delete(tamanomb.getcIdTamanoMB());
+		list();
+	}
+
+	public void cleanTamanoMB() {
+		this.init();
+	}
+
 	// Getters and Setters #4 except el service
 
 	public TamanoMBEntities getTamanombCenter() {
@@ -57,5 +66,4 @@ public class TamanoMBController {
 		this.listaTamanoMB = listaTamanoMB;
 	}
 
-	
 }

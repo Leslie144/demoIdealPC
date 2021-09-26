@@ -74,16 +74,23 @@
 								<h:outputText value="#{s.imagenUsuario}" />
 							</p:column>
 							
-							<p:column headerText="Usuario" sortBy="#{s.nombreUsuario}">
-								<h:outputText value="#{s.nombreUsuario}" />
-							</p:column>
-							
 							<p:column headerText="Teléfono" sortBy="#{s.telefonoUsuario}">
 								<h:outputText value="#{s.telefonoUsuario}" />
 							</p:column>
 							
 							<p:column headerText="Tipo" sortBy="#{s.tipoUsuario.nTipousuario}">
 								<h:outputText value="#{s.tipoUsuario.nTipousuario}" />
+							</p:column>
+							
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listTipoUsuarios" value="Eliminar"
+									actionListener="#{usuarioController.eliminar(s)}"></h:commandLink>
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+
+								<h:commandLink value="Modificar"
+									action="#{usuarioController.Modifpre(s)}"
+									style="color:blue;" />
 							</p:column>
 
 						</p:dataTable>

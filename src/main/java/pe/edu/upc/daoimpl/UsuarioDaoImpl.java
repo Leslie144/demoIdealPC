@@ -14,7 +14,7 @@ import pe.edu.upc.entities.Usuario;
 public class UsuarioDaoImpl implements IUsuarioDao {
 	@PersistenceContext(unitName = "demoIdealPC")
 	private EntityManager em;
-	
+
 	@Transactional
 	@Override
 	public void insert(Usuario u) {
@@ -23,10 +23,10 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 			em.persist(u);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error al insertar Usuario");
+			System.out.println("Error al insertar Usuario: " + e);
 		}
 	}
-	
+
 	@Transactional
 	@SuppressWarnings("unchecked")
 	@Override
@@ -41,7 +41,7 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 		}
 		return lista;
 	}
-	
+
 	@Transactional
 	@Override
 	public void eliminar(int idUsuario) {
@@ -55,15 +55,15 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	@Transactional
 	@Override
 	public void modificar(Usuario usuario) {
 		// TODO Auto-generated method stub
 		try {
 			em.merge(usuario);
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Error al actualizar una usuario: " + e);
 		}
 	}
 

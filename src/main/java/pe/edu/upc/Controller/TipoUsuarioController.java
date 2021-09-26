@@ -68,8 +68,7 @@ public class TipoUsuarioController {
 
 	public String Modifpre(TipoUsuarioEntities tm) {
 		this.setTipousuarioCenter(tm);
-		return "TipoUsuariorMod.xhtml";
-
+		return "tipoUsuarioMod.xhtml";
 	}
 
 	// Getters and Setters #4 except el service

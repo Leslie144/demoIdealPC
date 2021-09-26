@@ -44,6 +44,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 		return lista;
 	}
 
+	@Transactional
 	@Override
 	public void eliminar(int cid_tipo_usuario) {
 		// TODO Auto-generated method stub
@@ -56,6 +57,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 		}
 	}
 
+	@Transactional
 	@Override
 	public void modificar(TipoUsuarioEntities vc) {
 		// TODO Auto-generated method stub

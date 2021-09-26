@@ -45,6 +45,19 @@ public class UsuarioController {
 		this.listUsuario();
 	}
 
+	public String ingresar() {
+		try {
+			for(int i=0;listausuarios.size()>i;i++) {
+				if (usuario.getNombreUsuario()==listausuarios.get(i).getNombreUsuario() &&usuario.getContrasenaUsuario()==listausuarios.get(i).getContrasenaUsuario()) {
+				return "panel.xhtml";
+			}
+			}
+			 
+		} catch (Exception e) {
+			e.getMessage();
+		}return "listMarca.xhtml";
+	}
+
 	public String newUsuario() {
 		this.setUsuario(new Usuario());
 		return "usuario.xhtml";
@@ -53,11 +66,40 @@ public class UsuarioController {
 	public void listTipoUsuario() {
 		listatipousuarios = tuService.list();
 	}
-	
+
 	public void insertUsuario() {
-		uService.insert(usuario);
-		this.listUsuario();
+		try {
+			uService.insert(this.usuario);
+			this.listUsuario();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+
 	}
+
+	public void eliminar(Usuario vc) {
+		try {
+			uService.eliminar(vc.getIdUsuario());
+			listUsuario();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public void modificar() {
+		try {
+			uService.modificar(this.usuario);
+			this.listUsuario();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public String Modifpre(Usuario tm) {
+		this.setUsuario(tm);
+		return "usuarioMod.xhtml";
+	}
+
 	public void listUsuario() {
 		listausuarios = uService.list();
 	}
@@ -93,6 +135,5 @@ public class UsuarioController {
 	public void setListatipousuarios(List<TipoUsuarioEntities> listatipousuarios) {
 		this.listatipousuarios = listatipousuarios;
 	}
-
 
 }

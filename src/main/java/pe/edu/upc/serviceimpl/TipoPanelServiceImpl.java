@@ -27,4 +27,17 @@ public class TipoPanelServiceImpl implements ITipoPanelService {
 		// TODO Auto-generated method stub
 		return tpDao.list(); // #6
 	}
+
+	@Override
+	public void delete(int idTipoPanel) {
+		// TODO Auto-generated method stub
+		tpDao.delete(idTipoPanel);
+	}
+
+	@Override
+	public void update(TipoPanelEntities tipopanel) {
+		// TODO Auto-generated method stub
+		tpDao.update(tipopanel);
+
+	}
 }
