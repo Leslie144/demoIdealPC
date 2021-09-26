@@ -6,11 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
- 
+
 @Entity
 @Table(name = "tipoPanel")
 public class TipoPanelEntities {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idTipoPanel;
@@ -46,6 +46,4 @@ public class TipoPanelEntities {
 		this.nTipoPanel = nTipoPanel;
 	}
 
-
-	
 }

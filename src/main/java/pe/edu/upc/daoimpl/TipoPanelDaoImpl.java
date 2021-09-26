@@ -51,7 +51,7 @@ public class TipoPanelDaoImpl implements ITipoPanelDao {
 			System.out.println("Error al eliminar un Tipo de Panel");
 		}
 	}
-	
+
 	@Transactional
 	public void update(TipoPanelEntities tipopanel) {
 		try {

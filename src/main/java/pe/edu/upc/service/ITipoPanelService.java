@@ -8,8 +8,8 @@ public interface ITipoPanelService {
 	public void insert(TipoPanelEntities vc);
 
 	public List<TipoPanelEntities> list();
-	
-	public void delete (int idTipoPanel);
-	
+
+	public void delete(int idTipoPanel);
+
 	public void update(TipoPanelEntities tipopanel);
 }

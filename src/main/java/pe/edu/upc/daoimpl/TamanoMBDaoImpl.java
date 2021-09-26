@@ -39,6 +39,7 @@ public class TamanoMBDaoImpl implements ITamanoMBDao {
 		}
 		return lista;
 	}
+
 	@Transactional
 	@Override
 	public void delete(int idTamanoMB) {
@@ -50,7 +51,7 @@ public class TamanoMBDaoImpl implements ITamanoMBDao {
 			System.out.println("Error al eliminar el Tamaño del Motherboard");
 		}
 	}
-	
+
 	@Transactional
 	public void update(TamanoMBEntities tamanomb) {
 		try {
@@ -59,5 +60,4 @@ public class TamanoMBDaoImpl implements ITamanoMBDao {
 			System.out.println(e.getMessage());
 		}
 	}
-	
 }

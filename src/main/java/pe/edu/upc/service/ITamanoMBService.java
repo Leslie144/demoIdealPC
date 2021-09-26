@@ -10,6 +10,6 @@ public interface ITamanoMBService {
 	public List<TamanoMBEntities> list();
 
 	public void delete(int idTamanoMB);
-	
+
 	public void update(TamanoMBEntities tamanomb);
 }

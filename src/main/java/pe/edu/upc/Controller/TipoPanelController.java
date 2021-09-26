@@ -42,17 +42,16 @@ public class TipoPanelController {
 	public void delete(TipoPanelEntities tipopanel) {
 		tpService.delete(tipopanel.getIdTipoPanel());
 	}
-	
+
 	public void cleanTipoPanel() {
 		this.init();
 	}
-	
+
 	public void update() { // #8
 		tpService.update(tipopanelCenter);
 		cleanTipoPanel();
 	}
-	
-	
+
 	// Getters and Setters #4 except el service
 
 	public TipoPanelEntities getTipopanelCenter() {
@@ -70,7 +69,4 @@ public class TipoPanelController {
 	public void setListaTipoPanel(List<TipoPanelEntities> listaTipoPanel) {
 		this.listaTipoPanel = listaTipoPanel;
 	}
-
-	
-
 }

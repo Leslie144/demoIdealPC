@@ -14,7 +14,7 @@ public class TamanoMBEntities {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cIdTamanoMB;
-	
+
 	@Column(name = "nTamanoMB", length = 100, nullable = false)
 	private String nTamanoMB;
 
@@ -29,7 +29,7 @@ public class TamanoMBEntities {
 		this.nTamanoMB = nTamanoMB;
 	}
 
-	//Getters and setters
+	// Getters and setters
 
 	public int getcIdTamanoMB() {
 		return cIdTamanoMB;
@@ -47,6 +47,4 @@ public class TamanoMBEntities {
 		this.nTamanoMB = nTamanoMB;
 	}
 
-	
-	
 }

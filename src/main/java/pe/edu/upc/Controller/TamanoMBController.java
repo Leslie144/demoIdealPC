@@ -38,12 +38,12 @@ public class TamanoMBController {
 	public void list() { // #9
 		listaTamanoMB = tmbService.list();
 	}
-	
+
 	public void delete(TamanoMBEntities tamanomb) {
 		tmbService.delete(tamanomb.getcIdTamanoMB());
 		list();
 	}
-	
+
 	public void cleanTamanoMB() {
 		this.init();
 	}
@@ -70,6 +70,4 @@ public class TamanoMBController {
 	public void setListaTamanoMB(List<TamanoMBEntities> listaTamanoMB) {
 		this.listaTamanoMB = listaTamanoMB;
 	}
-
-	
 }
