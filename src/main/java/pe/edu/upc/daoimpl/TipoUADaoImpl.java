@@ -34,7 +34,7 @@ public class TipoUADaoImpl implements ITipoUADao {
 		// TODO Auto-generated method stub
 		List<TipoUAEntities> lista = new ArrayList<TipoUAEntities>();
 		try {
-			Query q = em.createQuery("SELECT * FROM tipoua");
+			Query q = em.createQuery("select v from TipoUAEntities v");
 			lista = (List<TipoUAEntities>) q.getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception

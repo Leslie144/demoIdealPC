@@ -8,11 +8,11 @@
 
 
 	<ui:define name="title">
-        .:Listado Tipo UA:.
+        .:Listado Tipo de UA:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Lista Tipo UA </span>
+		<span>Tipo de UA </span>
 	</ui:define>
 
 	<ui:define name="content">
@@ -24,38 +24,45 @@
 						<p:commandButton value="Nuevo"
 							action="#{tipoUAController.newTipoUA()}"
 							styleClass="btn btn-primary" ajax="false" />
+
 					</div>
 				</div>
 			</div>
 
+
+
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="lstSpecialty" var="s"
-							value="#{tipoUAController.listaTipoUA}" paginator="true"
-							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
-							rows="10" styleClass="table table-bordered"
+						<p:dataTable id="listTipoUA" var="tu"
+							value="#{tipoUAController.listaTipoUA}"
+							paginator="true" paginatorPosition="top"
+							rowsPerPageTemplate="10,20,30,40,50" rows="10"
+							styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{s.idTipoUA}">
-								<h:outputText value="#{s.idTipoUA}" />
+							<p:column headerText="Id" sortBy="#{tu.idTipoUA}">
+								<h:outputText value="#{tu.idTipoUA}" />
 							</p:column>
 
-							<p:column headerText="Tipo UA" sortBy="#{s.nTipoUA}">
-								<h:outputText value="#{s.nTipoUA}" />
+							<p:column headerText="Tipo " sortBy="#{tu.nTipoUA}">
+								<h:outputText value="#{tu.nTipoUA}" />
 							</p:column>
+
+
+
 
 							<p:column headerText="Operación" exportable="false">
-								<h:commandLink action="listPowner" value="Eliminar"
-									actionListener="#{tipoUAController.delete(s)}" />
+								<h:commandLink action="listtipoua" value="Eliminar"
+									actionListener="#{tipoUAController.delete(tu)}"></h:commandLink>
 							</p:column>
+							<p:column headerText="Operación" exportable="false">
 
-							<p:column headerText="Operación 2" exportable="false">
 								<h:commandLink value="Modificar"
-									action="#{tipoUAController.updatePre(s)}" style="color:blue;" />
+									action="#{tipoUAController.updatePre(tu)}"
+									style="color:blue;" />
 							</p:column>
-
 
 						</p:dataTable>
 					</div>

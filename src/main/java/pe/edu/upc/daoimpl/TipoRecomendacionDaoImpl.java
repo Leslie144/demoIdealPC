@@ -43,6 +43,7 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 		return lista;
 	}
 
+	@Transactional
 	@Override
 	public void delete(int id_recomendacion) {
 		// TODO Auto-generated method stub
@@ -55,7 +56,8 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 			System.out.println(e.getMessage());
 		}
 	}
-
+	
+	@Transactional
 	@Override
 	public void update(TipoRecomendacionEntities vc) {
 		// TODO Auto-generated method stub

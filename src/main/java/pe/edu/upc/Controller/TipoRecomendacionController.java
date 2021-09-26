@@ -28,11 +28,12 @@ public class TipoRecomendacionController {
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
-	
+
 	@PostConstruct // #6
 	public void init() { // #5
 		tiporecomendacionCenter = new TipoRecomendacionEntities();
 		listaTipoRecomendacion = new ArrayList<TipoRecomendacionEntities>();
+		this.list();
 	}
 
 	public String newTipoRecomendacion() { // #7
@@ -48,9 +49,13 @@ public class TipoRecomendacionController {
 		listaTipoRecomendacion = trService.list();
 	}
 
-	public void delete(TipoRecomendacionEntities tiporecomendacion) {
-		trService.delete(tiporecomendacion.getIdTipoRecomendacion());
-		list();
+	public void delete(TipoRecomendacionEntities tr) {
+		try {
+			trService.delete(tr.getIdTipoRecomendacion());
+			list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
 	}
 
 	// modificar
@@ -65,8 +70,8 @@ public class TipoRecomendacionController {
 	}
 	// Getters and Setters #4 except el service
 
-	public String UpdatePre(TipoRecomendacionEntities tipo_recomendacion) {
-		this.setTiporecomendacionCenter(tipo_recomendacion);
+	public String UpdatePre(TipoRecomendacionEntities tr) {
+		this.setTiporecomendacionCenter(tr);
 		return "tiporecomendacionMod.xhtml";
 	}
 
@@ -85,7 +90,5 @@ public class TipoRecomendacionController {
 	public void setListaTipoRecomendacion(List<TipoRecomendacionEntities> listaTipoRecomendacion) {
 		this.listaTipoRecomendacion = listaTipoRecomendacion;
 	}
-	
 
-	
 }

@@ -34,6 +34,7 @@ public class TipoUAController {
 	public void init() { // #5
 		tipouaCenter = new TipoUAEntities();
 		listaTipoUA = new ArrayList<TipoUAEntities>();
+		this.list();
 	}
 
 	public String newTipoUA() { // #7
