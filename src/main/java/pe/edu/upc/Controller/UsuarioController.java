@@ -47,15 +47,17 @@ public class UsuarioController {
 
 	public String ingresar() {
 		try {
-			for(int i=0;listausuarios.size()>i;i++) {
-				if (usuario.getNombreUsuario()==listausuarios.get(i).getNombreUsuario() &&usuario.getContrasenaUsuario()==listausuarios.get(i).getContrasenaUsuario()) {
-				return "panel.xhtml";
+			for (int i = 0; listausuarios.size() > i; i++) {
+				if (usuario.getNombreUsuario() == listausuarios.get(i).getNombreUsuario()
+						&& usuario.getContrasenaUsuario() == listausuarios.get(i).getContrasenaUsuario()) {
+					return "panel.xhtml";
+				}
 			}
-			}
-			 
+
 		} catch (Exception e) {
 			e.getMessage();
-		}return "listMarca.xhtml";
+		}
+		return "listMarca.xhtml";
 	}
 
 	public String newUsuario() {

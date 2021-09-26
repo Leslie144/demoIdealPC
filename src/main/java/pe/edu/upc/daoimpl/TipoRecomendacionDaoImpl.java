@@ -33,10 +33,12 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 		// TODO Auto-generated method stub
 		List<TipoRecomendacionEntities> lista = new ArrayList<TipoRecomendacionEntities>();
 		try {
-			Query q = em.createQuery("select v from TIPO_RECOMENDACION v");
+			Query q = em.createQuery("select v from TipoRecomendacionEntities v");
 			lista = (List<TipoRecomendacionEntities>) q.getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("Error al listar una Tipo Recomendación: " + e);
+
 		}
 		return lista;
 	}
