@@ -8,6 +8,8 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +19,9 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idUsuario;
 
-	@Column(name = "tipoUsuario", nullable = false)
-	private int tipoUsuario;
+	@ManyToOne
+	@JoinColumn(name = "tipoUsuario", nullable = false)
+	private TipoUsuarioEntities tipoUsuario;
 	
 	@Column(name = "nombreUsuario", length = 60, nullable = false)
 	private String nombreUsuario;
@@ -32,11 +35,11 @@ public class Usuario {
 	@Column(name = "telefonoUsuario", length = 60, nullable = false)
 	private String telefonoUsuario;
 	
-	@Column(name = "contraseñaUsuario", length = 60, nullable = false)
-	private String contraseñaUsuario;
+	@Column(name = "contrasenaUsuario", length = 60, nullable = false)
+	private String contrasenaUsuario;
 	
 	@Column(name = "disTrito", length = 45, nullable = false)
-	private int disTrito;
+	private String disTrito;
 	
 	@Column(name = "fechaRegistro", length = 60, nullable = false)
 	private Date fechaRegistro;
@@ -46,21 +49,23 @@ public class Usuario {
 
 	public Usuario() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int idUsuario, int tipoUsuario,int disTrito ,String nombreUsuario, String correoUsuario, String estadoUsuario,String telefonoUsuario, String contraseñaUsuario,Date fechaRegistro, String imagenUsuario) {
+	public Usuario(int idUsuario, TipoUsuarioEntities tipoUsuario, String nombreUsuario, String correoUsuario,
+			String estadoUsuario, String telefonoUsuario, String contrasenaUsuario, String disTrito, Date fechaRegistro,
+			String imagenUsuario) {
 		super();
-		this.idUsuario=idUsuario;
-		this.tipoUsuario=tipoUsuario;
-		this.nombreUsuario=nombreUsuario;
-		this.correoUsuario=correoUsuario;
-		this.estadoUsuario=estadoUsuario;
-		this.telefonoUsuario=telefonoUsuario;
-		this.contraseñaUsuario=contraseñaUsuario;
-		this.disTrito=disTrito;
-		this.fechaRegistro=fechaRegistro;
-		this.imagenUsuario=imagenUsuario;
-		
+		this.idUsuario = idUsuario;
+		this.tipoUsuario = tipoUsuario;
+		this.nombreUsuario = nombreUsuario;
+		this.correoUsuario = correoUsuario;
+		this.estadoUsuario = estadoUsuario;
+		this.telefonoUsuario = telefonoUsuario;
+		this.contrasenaUsuario = contrasenaUsuario;
+		this.disTrito = disTrito;
+		this.fechaRegistro = fechaRegistro;
+		this.imagenUsuario = imagenUsuario;
 	}
 
 	public int getIdUsuario() {
@@ -71,11 +76,11 @@ public class Usuario {
 		this.idUsuario = idUsuario;
 	}
 
-	public int getTipoUsuario() {
+	public TipoUsuarioEntities getTipoUsuario() {
 		return tipoUsuario;
 	}
 
-	public void setTipoUsuario(int tipoUsuario) {
+	public void setTipoUsuario(TipoUsuarioEntities tipoUsuario) {
 		this.tipoUsuario = tipoUsuario;
 	}
 
@@ -111,19 +116,19 @@ public class Usuario {
 		this.telefonoUsuario = telefonoUsuario;
 	}
 
-	public String getContraseñaUsuario() {
-		return contraseñaUsuario;
+	public String getContrasenaUsuario() {
+		return contrasenaUsuario;
 	}
 
-	public void setContraseñaUsuario(String contraseñaUsuario) {
-		this.contraseñaUsuario = contraseñaUsuario;
+	public void setContrasenaUsuario(String contrasenaUsuario) {
+		this.contrasenaUsuario = contrasenaUsuario;
 	}
 
-	public int getDisTrito() {
+	public String getDisTrito() {
 		return disTrito;
 	}
 
-	public void setDisTrito(int disTrito) {
+	public void setDisTrito(String disTrito) {
 		this.disTrito = disTrito;
 	}
 
@@ -144,9 +149,5 @@ public class Usuario {
 	}
 
 	
-
 	
-	
-	
-
 }
