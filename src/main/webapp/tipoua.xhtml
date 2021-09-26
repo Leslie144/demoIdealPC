@@ -22,7 +22,7 @@
 			<p:inputText autocomplete="off" id="Cid_tipo_ua"
 				styleClass="form-control"
 				value="#{tipoUAController.tipouaCenter.idTipoUA}" required="true" />
-			<h:outputLabel for="Cid_tipo_ua" value="ID:  "
+			<h:outputLabel for="Cid_tipo_ua" value="Tipo:  "
 				styleClass="control-label" />
 
 			<p:inputText autocomplete="off" id="Ntipo_ua"
@@ -34,9 +34,9 @@
 			<p:commandButton value="Grabar"
 				actionListener="#{tipoUAController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listTipoua?faces-redirect=true" />
+				action="listtipoua?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listTipoua?faces-redirect=true" immediate="true"
+				action="listtipoua?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 		</h:form>
 	</ui:define>
