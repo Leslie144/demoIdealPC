@@ -17,7 +17,6 @@ public class TipoModularController {
 
 	@Inject
 	private ITipoModularService tmService;
-
 	private TipoModularEntities tipomodularCenter;
 	List<TipoModularEntities> listaTipoModular;
 
