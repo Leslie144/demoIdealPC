@@ -22,7 +22,7 @@ public class TiendaDaoImpl implements ITiendaDao{
 		try {
 			em.persist(t);
 		}catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error al insertar Tienda");
 		}
 	}
 	@SuppressWarnings("unchecked")
@@ -30,10 +30,10 @@ public class TiendaDaoImpl implements ITiendaDao{
 	public List<Tienda> list(){
 		List<Tienda> lista=new ArrayList<Tienda>();
 		try {
-			Query q=em.createQuery("from Tienda p");
+			Query q=em.createQuery("select p from Tienda p");
 			lista = (List<Tienda>) q.getResultList();
 		}catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error al listar Tienda");
 		}
 		return lista;
 	}
@@ -47,19 +47,6 @@ public class TiendaDaoImpl implements ITiendaDao{
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
-	}
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Tienda> finByNameTienda(Tienda de) {
-		List<Tienda> lista = new ArrayList<Tienda>();
-		try {
-			Query q = em.createQuery("from Tienda m where m.nombreTienda like ?1");
-			q.setParameter(1, "%" + de.getNombreTienda() + "%");
-			lista = (List<Tienda>) q.getResultList();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		return lista;
 	}
 	@Transactional
 	@Override

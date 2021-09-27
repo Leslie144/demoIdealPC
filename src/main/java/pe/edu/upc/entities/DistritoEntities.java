@@ -7,17 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "DISTRITO")
+@Table(name = "distrito")
 public class DistritoEntities {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idDistrito;
 	
-	@Column(name = "nombreDistrito", length = 120, nullable = false)
-	private String nombreDistrito;
-
+	@Column(name = "nNombreDistrito", length = 120, nullable = false)
+	private String nNombreDistrito;
 
 	
 	public DistritoEntities() {
@@ -25,10 +23,10 @@ public class DistritoEntities {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DistritoEntities(int idDistrito, String nombreDistrito) {
+	public DistritoEntities(int idDistrito, String nNombreDistrito) {
 		super();
 		this.idDistrito = idDistrito;
-		this.nombreDistrito = nombreDistrito;
+		this.nNombreDistrito = nNombreDistrito;
 	}
 	
 	//Getters and setters
@@ -42,36 +40,12 @@ public class DistritoEntities {
 		this.idDistrito = idDistrito;
 	}
 
-
-	public String getNombreDistrito() {
-		return nombreDistrito;
+	public String getnNombreDistrito() {
+		return nNombreDistrito;
 	}
 
-	public void setNombreDistrito(String nombreDistrito) {
-		this.nombreDistrito = nombreDistrito;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idDistrito;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		DistritoEntities other = (DistritoEntities) obj;
-		if (idDistrito != other.idDistrito)
-			return false;
-		return true;
-
+	public void setnNombreDistrito(String nNombreDistrito) {
+		this.nNombreDistrito = nNombreDistrito;
 	}
 
 	

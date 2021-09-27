@@ -24,18 +24,13 @@ public class TiendaServiceImpl implements ITiendaService{
 		tDao.eliminar(idTienda);
 	}
 	@Override
-	public void modificar(Tienda tienda) {
-		tDao.modificar(tienda);
-	}
-	@Override
 	public List<Tienda>list(){
 		return tDao.list();
 	}
 	@Override
-	public List<Tienda> finByNameTienda(Tienda de) {
-		return tDao.finByNameTienda(de);
+	public void modificar(Tienda tienda) {
+		tDao.modificar(tienda);
 	}
 	
-
 
 }

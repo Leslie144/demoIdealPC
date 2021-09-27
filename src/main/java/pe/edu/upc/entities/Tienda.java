@@ -1,7 +1,5 @@
 package pe.edu.upc.entities;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,57 +18,59 @@ public class Tienda {
 	
 	@ManyToOne
 	@JoinColumn(name = "idDistrito",  nullable = false)
-	private DistritoEntities distrito;
+	private DistritoEntities idDistrito;
 	
 	@Column(name = "direccionTienda", length = 45, nullable = false)
-	private String direccionTienda;
+	private int direccionTienda;
 	
 	@Column(name = "nombreTienda", length = 45, nullable = false)
-	private String nombreTienda;
+	private int nombreTienda;
 	
-	@Column(name = "telefonoTienda",  nullable = false)
+	@Column(name = "telefonoTienda", length = 45, nullable = false)
 	private int telefonoTienda;
 	
 	@Column(name = "webTienda", length = 45, nullable = false)
-	private String webTienda;
+	private int webTienda;
 	
-	private Date fechaRegistrotienda;
+	@Column(name = "fechaRegistrotienda", length = 45, nullable = false)
+	private int fechaRegistrotienda;
 	
 	public Tienda() {
 		super();
 	}
-	public Tienda( int idTienda,DistritoEntities distrito,String direccionTienda,String nombreTienda,int telefonoTienda,String webTienda,Date fechaRegistrotienda) {
+	public Tienda( int idTienda,DistritoEntities idDistrito,int direccionTienda,int nombreTienda,int telefonoTienda,int webTienda,int fechaRegistrotienda) {
 		super();
 		this.idTienda=idTienda;
-		this.distrito=distrito;
+		this.idDistrito=idDistrito;
 		this.direccionTienda=direccionTienda;
 		this.nombreTienda=nombreTienda;
 		this.telefonoTienda=telefonoTienda;
 		this.webTienda=webTienda;
 		this.fechaRegistrotienda=fechaRegistrotienda;
 	}
+	
 	public int getIdTienda() {
 		return idTienda;
 	}
 	public void setIdTienda(int idTienda) {
 		this.idTienda = idTienda;
 	}
-	public DistritoEntities getDistrito() {
-		return distrito;
+	public DistritoEntities getIdDistrito() {
+		return idDistrito;
 	}
-	public void setDistrito(DistritoEntities distrito) {
-		this.distrito = distrito;
+	public void setIdDistrito(DistritoEntities idDistrito) {
+		this.idDistrito = idDistrito;
 	}
-	public String getDireccionTienda() {
+	public int getDireccionTienda() {
 		return direccionTienda;
 	}
-	public void setDireccionTienda(String direccionTienda) {
+	public void setDireccionTienda(int direccionTienda) {
 		this.direccionTienda = direccionTienda;
 	}
-	public String getNombreTienda() {
+	public int getNombreTienda() {
 		return nombreTienda;
 	}
-	public void setNombreTienda(String nombreTienda) {
+	public void setNombreTienda(int nombreTienda) {
 		this.nombreTienda = nombreTienda;
 	}
 	public int getTelefonoTienda() {
@@ -79,20 +79,18 @@ public class Tienda {
 	public void setTelefonoTienda(int telefonoTienda) {
 		this.telefonoTienda = telefonoTienda;
 	}
-	public String getWebTienda() {
+	public int getWebTienda() {
 		return webTienda;
 	}
-	public void setWebTienda(String webTienda) {
+	public void setWebTienda(int webTienda) {
 		this.webTienda = webTienda;
 	}
-	public Date getFechaRegistrotienda() {
+	public int getFechaRegistrotienda() {
 		return fechaRegistrotienda;
 	}
-	public void setFechaRegistrotienda(Date fechaRegistrotienda) {
+	public void setFechaRegistrotienda(int fechaRegistrotienda) {
 		this.fechaRegistrotienda = fechaRegistrotienda;
 	}
-	
-	
 	
 	
 	
