@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TIPO_USUARIO")
+@Table(name = "tipoUsuario")
 public class TipoUsuarioEntities {
 
 	@Id
@@ -28,6 +28,7 @@ public class TipoUsuarioEntities {
 		this.idTipousuario = idTipousuario;
 		this.nTipousuario = nTipousuario;
 	}
+	//Getters and setters
 
 	public int getIdTipousuario() {
 		return idTipousuario;
@@ -44,6 +45,7 @@ public class TipoUsuarioEntities {
 	public void setnTipousuario(String nTipousuario) {
 		this.nTipousuario = nTipousuario;
 	}
+
 	
 	
 }

@@ -27,4 +27,16 @@ public class TipoRecomendacionServiceImpl implements ITipoRecomendacionService {
 		// TODO Auto-generated method stub
 		return trDao.list(); // #6
 	}
+
+	@Override
+	public void delete(int id_recomendacion) {
+		// TODO Auto-generated method stub
+		trDao.delete(id_recomendacion);
+	}
+
+	@Override
+	public void update(TipoRecomendacionEntities vc) {
+		// TODO Auto-generated method stub
+		trDao.update(vc);
+	}
 }

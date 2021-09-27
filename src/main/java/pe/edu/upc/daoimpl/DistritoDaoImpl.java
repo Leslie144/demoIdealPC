@@ -26,9 +26,18 @@ public class DistritoDaoImpl implements IDistritoDao {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	@Transactional
+	@Override
+	public void delete(int idDistrito) {
+		try {
+			em.remove(idDistrito);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar distrito");
+		}
+	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<DistritoEntities> list() {
 		// TODO Auto-generated method stub
 		List<DistritoEntities> lista = new ArrayList<DistritoEntities>();

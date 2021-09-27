@@ -6,6 +6,8 @@ import pe.edu.upc.entities.MarcaEntities;
 
 public interface IMarcaDao {
 	public void insert(MarcaEntities vc);
+	
+	public void delete(int idMarca);
 
 	public List<MarcaEntities> list();
 }

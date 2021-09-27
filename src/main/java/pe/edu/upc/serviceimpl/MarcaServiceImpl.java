@@ -16,14 +16,20 @@ public class MarcaServiceImpl implements IMarcaService {
 
 	@Inject // #3
 	private IMarcaDao mDao;
-	@Override
-	public void insert(MarcaEntities vc) {
+
+	// Methods #1
+	public void save(MarcaEntities vc) {
 		// TODO Auto-generated method stub
 		mDao.insert(vc); // #5
 	}
-	@Override
+	
+	public void delete(int idMarca) {
+		mDao.delete(idMarca);
+	}
+
 	public List<MarcaEntities> list() {
 		// TODO Auto-generated method stub
 		return mDao.list(); // #6
 	}
 }
+

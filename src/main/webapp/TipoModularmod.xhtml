@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"> <ui:composition
+	template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Fuente Modular:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Fuente Modular</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="Cid_tipo_modular" value="Id "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Cid_tipo_modular"
+				styleClass="form-control"
+				value="#{tipoModularController.tipoModularCenter.cidTipoModular}" required="true" />
+		
+			<h:outputLabel for="Ntipo_modular" value="TipoModular"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Ntipo_modular"
+				styleClass="form-control"
+				value="#{tipoModularController.tipoModularCenter.nTipoModular}"
+				maxlength="100" required="true" validatorMessage="#{tipoModularController.mensaje}">
+			</p:inputText>
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{tipoModularController.modificar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listTipoModular?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listTipoModular?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition> </html>

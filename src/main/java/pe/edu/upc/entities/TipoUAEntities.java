@@ -8,42 +8,44 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TIPO_UA")
+@Table(name = "tipoUa")
 public class TipoUAEntities {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idTipoua;
-	
-	@Column(name = "nTipoua", length = 100, nullable = false)
-	private String nTipoua;
+	private int idTipoUA;
+
+	@Column(name = "nTipoUA", length = 100, nullable = false)
+	private String nTipoUA;
 
 	public TipoUAEntities() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public TipoUAEntities(int idTipoua, String nTipoua) {
+	public TipoUAEntities(int idTipoUA, String nTipoUA) {
 		super();
-		this.idTipoua = idTipoua;
-		this.nTipoua = nTipoua;
+		this.idTipoUA = idTipoUA;
+		this.nTipoUA = nTipoUA;
 	}
 
-	public int getIdTipoua() {
-		return idTipoua;
+	// Getters and setters
+	public int getIdTipoUA() {
+		return idTipoUA;
 	}
 
-	public void setIdTipoua(int idTipoua) {
-		this.idTipoua = idTipoua;
+	public void setIdTipoUA(int idTipoUA) {
+		this.idTipoUA = idTipoUA;
 	}
 
-	public String getnTipoua() {
-		return nTipoua;
+	public String getnTipoUA() {
+		return nTipoUA;
 	}
 
-	public void setnTipoua(String nTipoua) {
-		this.nTipoua = nTipoua;
+	public void setnTipoUA(String nTipoUA) {
+		this.nTipoUA = nTipoUA;
 	}
+
 
 	
 }
