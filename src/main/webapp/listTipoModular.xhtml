@@ -3,8 +3,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui"> <ui:composition
-	template="master.xhtml">
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="master.xhtml">
 
 
 	<ui:define name="title">
@@ -18,43 +18,54 @@
 	<ui:define name="content">
 
 		<h:form>
-			<div class="row"> <div class="col-sm-4"> <div
-				class="form-group"> <p:commandButton value="Nuevo"
-				action="#{TipoModularController.newTipoModular()}"
-				styleClass="btn btn-primary" ajax="false" /> </div> </div> </div>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group">
+						<p:commandButton value="Nuevo"
+							action="#{tipoModularController.newTipoModular()}"
+							styleClass="btn btn-primary" ajax="false" />
+					</div>
+				</div>
+			</div>
 
-			<div class="row"> <div class="col-sm-12"> <div
-				class="form-group table-responsive box-table-class"> <p:dataTable
-				id="listTipoModulares" var="tm"
-				value="#{tipoModularController.listaTipoModulares}" paginator="true"
-				paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
-				rows="10" styleClass="table table-bordered"
-				emptyMessage="No existen registros" rowIndexVar="item"
-				style="margin-bottom:0">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+						<p:dataTable id="listTipoModular" var="tm"
+							value="#{tipoModularController.listaTipoModular}"
+							paginator="true" paginatorPosition="top"
+							rowsPerPageTemplate="10,20,30,40,50" rows="10"
+							styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
 
-				<p:column headerText="Id" sortBy="#{tm.cidTipoModular}">
-					<h:outputText value="#{tm.cidTipoModular}" />
-				</p:column>
+							<p:column headerText="Id" sortBy="#{tm.idTipoModular}">
+								<h:outputText value="#{tm.idTipoModular}" />
+							</p:column>
 
-				<p:column headerText="Tipo Modular" sortBy="#{tm.nTipoModular}">
-					<h:outputText value="#{tm.nTipoModular}" />
-				</p:column>
-				<p:column headerText="Operación" exportable="false">
-					<h:commandLink action="listTipoModulares" value="Eliminar"
-						actionListener="#{tipoModularController.eliminar(tm)}"></h:commandLink>
-				</p:column>
-				<p:column headerText="Operación" exportable="false">
+							<p:column headerText="Tipo Modular" sortBy="#{tm.nTipoModular}">
+								<h:outputText value="#{tm.nTipoModular}" />
+							</p:column>
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listTipoModular" value="Eliminar"
+									actionListener="#{tipoModularController.eliminar(tm)}" />
+							</p:column>
+							<p:column headerText="Operación 2" exportable="false">
 
-					<h:commandLink value="Modificar"
-						action="#{tipoModularController.Modifpre(tm)}"
-						style="color:blue;" />
-				</p:column>
+								<h:commandLink value="Modificar"
+									action="#{tipoModularController.Modifpre(tm)}"
+									style="color:blue;" />
+							</p:column>
 
-			</p:dataTable> </div> </div> </div>
+						</p:dataTable>
+					</div>
+				</div>
+			</div>
 		</h:form>
 	</ui:define>
 
 	<ui:define name="footerCont">
 
 	</ui:define>
-</ui:composition> </html>
+</ui:composition>
+</html>

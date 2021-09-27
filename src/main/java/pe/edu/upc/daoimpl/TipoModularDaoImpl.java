@@ -31,7 +31,7 @@ public class TipoModularDaoImpl implements ITipoModularDao{
 		// TODO Auto-generated method stub
 		List<TipoModularEntities> lista = new ArrayList<TipoModularEntities>();
 		try{
-			Query q = em.createQuery("select v from TIPO_MODULAR v");
+			Query q = em.createQuery("select v from TipoModularEntities v");
 			lista = (List<TipoModularEntities>) q.getResultList();
 		} catch (Exception e) {
 			//TODO:handle exception
@@ -41,11 +41,11 @@ public class TipoModularDaoImpl implements ITipoModularDao{
 
 	@Transactional
 	@Override
-	public void eliminar(int cid_tipo_modular) {
+	public void eliminar(int id_tipomodular) {
 		// TODO Auto-generated method stub
 		TipoModularEntities tme = new TipoModularEntities();
 		try {
-			tme = em.getReference(TipoModularEntities.class,cid_tipo_modular);
+			tme = em.getReference(TipoModularEntities.class,tme);
 			em.remove(tme);
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
