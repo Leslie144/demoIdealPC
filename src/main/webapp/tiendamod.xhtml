@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="master.xhtml">
+	<ui:define name="title">
+        .:Registro de Tiendas:.
+    </ui:define>
+	<ui:define name="titleCont">
+		<span>Tiendas</span>
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idTienda" value="Id " styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idTienda"
+				styleClass="form-control"
+				value="#{tiendaController.tienda.idTienda}" required="true" />
+
+			<h:outputLabel for="nameTienda" value="Tienda"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombreTienda"
+				styleClass="form-control"
+				value="#{tiendaController.tienda.nombreTienda}" maxlength="30"
+				required="true" validatorMessage="#{tiendaController.mensaje}">
+
+			</p:inputText>
+
+
+
+			<h:outputLabel for="nameTienda" value="Direccion"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="direccionTienda"
+				styleClass="form-control"
+				value="#{tiendaController.tienda.direccionTienda}" maxlength="30"
+				required="true" validatorMessage="#{tiendaController.mensaje}">
+
+			</p:inputText>
+
+
+			<h:outputLabel for="nameTienda" value="telefonoTienda"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="telefonoTienda"
+				styleClass="form-control"
+				value="#{tiendaController.tienda.telefonoTienda}" maxlength="30"
+				required="true" validatorMessage="#{tiendaController.mensaje}">
+
+			</p:inputText>
+
+
+			<h:outputLabel for="nameTienda" value="webTienda"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="webTienda"
+				styleClass="form-control"
+				value="#{tiendaController.tienda.webTienda}" maxlength="30"
+				required="true" validatorMessage="#{tiendaController.mensaje}">
+
+			</p:inputText>
+
+
+			<h:outputLabel for="dateMedicCenter" value="Fecha de Creación "
+				styleClass="control-label" />
+			<p:calendar id="dateMedicCenter" pattern="dd/MM/yyyy"
+				value="#{tiendaController.tienda.fechaRegistrotienda}"
+				showOn="button" timeZone="UTC" required="true">
+			</p:calendar>
+
+
+
+			<br />
+
+			<p:outputLabel for="cboDistrito" value="Distrito" />
+			<p:selectOneMenu id="cboDistrito"
+				value="#{tiendaController.tienda.distrito}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{tiendaController.listadistritos}" var="m"
+					itemLabel="#{m.nombreDistrito}" itemValue="#{m}" />
+			</p:selectOneMenu>
+			<br />
+
+			<p:commandButton value="Grabar"
+				actionListener="#{tiendaController.modificar}"
+				styleClass="btn btn-primary " update="@form"
+				action="listtienda?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listTienda?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
+

@@ -20,18 +20,18 @@
 				styleClass="control-label" />
 			<p:inputText autocomplete="off" id="idDistrito"
 				styleClass="form-control"
-				value="#{distritoController.distrito.idDistrito}" required="true" />
+				value="#{distritoController.distritoCenter.idDistrito}" required="true" />
 
 			<h:outputLabel for="nombreDistrito" value="Nombres "
 				styleClass="control-label" />
 			<p:inputText autocomplete="off" id="nombreDistrito"
 				styleClass="form-control"
-				value="#{distritoController.distrito.nNombreDistrito}"
+				value="#{distritoController.distritoCenter.nombreDistrito}"
 				maxlength="30" required="true" />
 				
 			<br />
 			<p:commandButton value="Grabar"
-				actionListener="#{distritoController.insert()}"
+				actionListener="#{distritoController.modificar()}"
 				styleClass="btn btn-primary " update="@form"
 				action="listdistrito?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
