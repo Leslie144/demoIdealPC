@@ -45,10 +45,10 @@ public class TipoModularDaoImpl implements ITipoModularDao{
 		// TODO Auto-generated method stub
 		TipoModularEntities tme = new TipoModularEntities();
 		try {
-			tme = em.getReference(TipoModularEntities.class,tme);
+			tme = em.getReference(TipoModularEntities.class,id_tipomodular);
 			em.remove(tme);
 		}catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error al eliminar un tipo modular");
 		}
 	}
 

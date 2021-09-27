@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tipoModular")
-public class TipoModularEntities {
+public class TipoModularEntities  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
