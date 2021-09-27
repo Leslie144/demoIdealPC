@@ -19,21 +19,13 @@ public class TipoModularController {
 	private ITipoModularService tmService;
 
 	private TipoModularEntities tipomodularCenter;
-	List<TipoModularEntities> listaTipoModulares;
-	private String mensaje = "error";
-
-	public String getMensaje() {
-		return mensaje;
-	}
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
+	List<TipoModularEntities> listaTipoModular;
 
 	@PostConstruct
-	public void init() {
+	private void init() {
 		tipomodularCenter = new TipoModularEntities();
-		listaTipoModulares = new ArrayList<TipoModularEntities>();
+		listaTipoModular = new ArrayList<TipoModularEntities>();
+		this.list();
 	}
 
 	public String newTipoModular() {
@@ -43,19 +35,25 @@ public class TipoModularController {
 
 	public void insert() {
 		tmService.insert(tipomodularCenter);
+		cleanTipoModular();
+	}
+
+	public void eliminar(TipoModularEntities tipomodular) {
+		tmService.eliminar(tipomodular.getidTipoModular());
+		list();
+	}
+
+	public void cleanTipoModular() {
+		this.init();
 	}
 
 	public void list() {
-		listaTipoModulares = tmService.list();
+		listaTipoModular = tmService.list();
 	}
 
-	public void eliminar(TipoModularEntities vc) {
-		try {
-			tmService.eliminar(vc.getcidTipoModular());
-			list();
-		} catch (Exception e) {
-			e.getMessage();
-		}
+	public String Modifpre(TipoModularEntities tm) {
+		this.setTipoModularCenter(tm);
+		return "TipoModularmod.xhtml";
 	}
 
 	public void modificar() {
@@ -63,14 +61,8 @@ public class TipoModularController {
 			tmService.modificar(this.tipomodularCenter);
 			this.list();
 		} catch (Exception e) {
-			e.getMessage();
+
 		}
-	}
-
-	public String Modifpre(TipoModularEntities tm) {
-		this.setTipoModularCenter(tm);
-		return "TipoModularMod.xhtml";
-
 	}
 
 	public TipoModularEntities getTipoModularCenter() {
@@ -83,12 +75,12 @@ public class TipoModularController {
 		this.tipomodularCenter = tipoModularCenter;
 	}
 
-	public List<TipoModularEntities> getListaTipoModulares() {
-		return listaTipoModulares;
+	public List<TipoModularEntities> getListaTipoModular() {
+		return listaTipoModular;
 
 	}
 
-	public void setListaTipoModulares(List<TipoModularEntities> listaTipoModulares) {
-		this.listaTipoModulares = listaTipoModulares;
+	public void setListaTipoModular(List<TipoModularEntities> listaTipoModular) {
+		this.listaTipoModular = listaTipoModular;
 	}
 }

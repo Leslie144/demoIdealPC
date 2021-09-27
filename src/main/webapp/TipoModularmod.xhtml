@@ -3,8 +3,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://java.sun.com/jsf/facelets"> <ui:composition
-	template="master.xhtml">
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="master.xhtml">
 
 	<ui:define name="title">
         .:Registro de Fuente Modular:.
@@ -16,18 +16,19 @@
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="Cid_tipo_modular" value="Id "
+			<h:outputLabel for="idTipoModular" value="Id "
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Cid_tipo_modular"
+			<p:inputText autocomplete="off" id="idTipoModular"
 				styleClass="form-control"
-				value="#{tipoModularController.tipoModularCenter.cidTipoModular}" required="true" />
-		
-			<h:outputLabel for="Ntipo_modular" value="TipoModular"
+				value="#{tipoModularController.tipoModularCenter.idTipoModular}"
+				required="true" />
+
+			<h:outputLabel for="nTipoModular" value="TipoModular"
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Ntipo_modular"
+			<p:inputText autocomplete="off" id="nTipoModular"
 				styleClass="form-control"
 				value="#{tipoModularController.tipoModularCenter.nTipoModular}"
-				maxlength="100" required="true" validatorMessage="#{tipoModularController.mensaje}">
+				required="true">
 			</p:inputText>
 			<br />
 			<p:commandButton value="Grabar"
@@ -43,4 +44,5 @@
 	<ui:define name="footerCont">
 
 	</ui:define>
-</ui:composition> </html>
+</ui:composition>
+</html>
