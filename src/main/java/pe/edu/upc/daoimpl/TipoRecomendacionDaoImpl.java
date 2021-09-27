@@ -53,7 +53,7 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 			em.remove(id_recomendacion);
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println(e.getMessage());
+			System.out.println("Error al eliminar un tipo recomendación " + e);
 		}
 	}
 	
@@ -67,6 +67,23 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<TipoRecomendacionEntities> finByNameTipoRecomendacion(TipoRecomendacionEntities tr) {
+		// TODO Auto-generated method stub
+				List<TipoRecomendacionEntities> lista = new ArrayList<TipoRecomendacionEntities>();
+				try {
+					Query q = em.createQuery("from TipoRecomendacionEntities v where v.tRecomendacion like ?1");
+					q.setParameter(1, "%" + tr.gettRecomendacion() + "%");
+					lista = (List<TipoRecomendacionEntities>) q.getResultList();
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println("Error al listar una Tipo Recomendación: " + e);
+
+				}
+				return lista;
 	}
 
 }

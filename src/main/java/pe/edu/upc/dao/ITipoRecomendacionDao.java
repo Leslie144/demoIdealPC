@@ -12,4 +12,6 @@ public interface ITipoRecomendacionDao {
 	public List<TipoRecomendacionEntities> list();
 
 	public void update(TipoRecomendacionEntities vc);
+	
+	public List<TipoRecomendacionEntities> finByNameTipoRecomendacion(TipoRecomendacionEntities tr);
 }

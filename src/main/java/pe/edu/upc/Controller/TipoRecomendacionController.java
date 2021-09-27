@@ -58,6 +58,10 @@ public class TipoRecomendacionController {
 		}
 	}
 
+	public void clean() {
+		this.init();
+	}
+
 	// modificar
 	public void update() {
 		try {
@@ -68,12 +72,25 @@ public class TipoRecomendacionController {
 			e.getMessage();
 		}
 	}
-	// Getters and Setters #4 except el service
 
 	public String UpdatePre(TipoRecomendacionEntities tr) {
 		this.setTiporecomendacionCenter(tr);
 		return "tiporecomendacionMod.xhtml";
 	}
+
+	public void findByName() {
+		try {
+			if (tiporecomendacionCenter.gettRecomendacion().isEmpty()) {
+				this.list();
+			} else {
+				listaTipoRecomendacion = this.trService.finByNameTipoRecomendacion(this.getTiporecomendacionCenter());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	// Getters and Setters #4 except el service
 
 	public TipoRecomendacionEntities getTiporecomendacionCenter() {
 		return tiporecomendacionCenter;

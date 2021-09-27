@@ -14,7 +14,7 @@ import pe.edu.upc.service.IDistritoService;
 
 @Named // #1
 @RequestScoped // #2
-public class DistritoController implements Serializable{
+public class DistritoController implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Inject // #3
 	private IDistritoService dService;
@@ -23,8 +23,8 @@ public class DistritoController implements Serializable{
 
 	@PostConstruct // #6
 	public void init() { // #5
-		this.listaDistrito=new ArrayList<DistritoEntities>();
-		this.distritoCenter=new DistritoEntities();
+		this.listaDistrito = new ArrayList<DistritoEntities>();
+		this.distritoCenter = new DistritoEntities();
 		this.list();
 	}
 
@@ -41,41 +41,45 @@ public class DistritoController implements Serializable{
 			e.getMessage();
 		}
 	}
+
 	public void eliminar(DistritoEntities dist) {
 		try {
 			dService.eliminar(dist.getIdDistrito());
 			list();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.getMessage();
 		}
 	}
 
 	public void list() { // #9
 		try {
-			listaDistrito=dService.list();
-		}catch(Exception e) {
+			listaDistrito = dService.list();
+		} catch (Exception e) {
 			e.getMessage();
 		}
 	}
+
 	public void clean() {
 		this.init();
 	}
+
 	public void findByName() {
 		try {
-			if(distritoCenter.getNombreDistrito().isEmpty()) {
+			if (distritoCenter.getNombreDistrito().isEmpty()) {
 				this.list();
-			}else {
-				listaDistrito=this.dService.finByNameDistrito(this.getDistritoCenter());
+			} else {
+				listaDistrito = this.dService.finByNameDistrito(this.getDistritoCenter());
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.getMessage();
 		}
 	}
+
 	public void modificar() {
 		try {
 			dService.modificar(this.distritoCenter);
 			this.list();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.getMessage();
 		}
 	}
@@ -84,15 +88,7 @@ public class DistritoController implements Serializable{
 		this.setDistritoCenter(spec);
 		return "distritomod.xhtml";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public DistritoEntities getDistritoCenter() {
 		return distritoCenter;
 	}
@@ -109,9 +105,4 @@ public class DistritoController implements Serializable{
 		this.listaDistrito = listaDistrito;
 	}
 
-	
-	
-	
-	
-	
 }

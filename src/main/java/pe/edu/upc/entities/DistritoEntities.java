@@ -29,28 +29,14 @@ public class DistritoEntities {
 		this.nombreDistrito = nombreDistrito;
 	}
 
-	public int getIdDistrito() {
-		return idDistrito;
-	}
+	public int getIdDistrito() 			{ return idDistrito; }
+	public String getNombreDistrito() 	{ return nombreDistrito; }
 
-	public void setIdDistrito(int idDistrito) {
-		this.idDistrito = idDistrito;
+	public void setIdDistrito(int idDistrito) { 
+		this.idDistrito = idDistrito; 
 	}
-
-	public String getNombreDistrito() {
-		return nombreDistrito;
-	}
-
-	public void setNombreDistrito(String nombreDistrito) {
-		this.nombreDistrito = nombreDistrito;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + idDistrito;
-		return result;
+	public void setNombreDistrito(String nombreDistrito) { 
+		this.nombreDistrito = nombreDistrito; 
 	}
 
 	@Override
@@ -68,6 +54,13 @@ public class DistritoEntities {
 	}
 
 	
-	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + idDistrito;
+		return result;
+	}
+
 	
 }

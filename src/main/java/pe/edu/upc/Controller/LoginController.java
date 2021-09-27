@@ -37,7 +37,7 @@ public class LoginController implements Serializable{
 		
 		try {
 			Optional<Usuario> userFound = this.uS.authentication(user);
-			if(userFound.isPresent() && userFound.get().getEstadoUsuario().equalsIgnoreCase("A")) {
+			if(userFound.isPresent() && userFound.get().getEstadoUsuario().equalsIgnoreCase("Administrador")) {
 			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("user", userFound.get());
 			redirect = "/panel?faces-redirect=true";
 			}else {

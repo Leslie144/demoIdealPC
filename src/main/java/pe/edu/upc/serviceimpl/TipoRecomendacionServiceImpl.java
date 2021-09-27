@@ -39,4 +39,9 @@ public class TipoRecomendacionServiceImpl implements ITipoRecomendacionService {
 		// TODO Auto-generated method stub
 		trDao.update(vc);
 	}
+	@Override
+	public List<TipoRecomendacionEntities> finByNameTipoRecomendacion(TipoRecomendacionEntities tr) {
+		// TODO Auto-generated method stub
+		return trDao.finByNameTipoRecomendacion(tr); // #6
+	}
 }
