@@ -8,14 +8,14 @@
 		<jta-data-source>java:/IdealPCbd</jta-data-source>
 		<class>pe.edu.upc.entities.TipoUAEntities</class>
 		<class>pe.edu.upc.entities.TipoRecomendacionEntities</class>
-		<class>pe.edu.upc.entities.DistritoEntities</class>
 		<class>pe.edu.upc.entities.MarcaEntities</class>
 		<class>pe.edu.upc.entities.TamanoMBEntities</class>
-		<class>pe.edu.upc.entities.Tienda</class>
 		<class>pe.edu.upc.entities.TipoModularEntities</class>
 		<class>pe.edu.upc.entities.TipoPanelEntities</class>
 		<class>pe.edu.upc.entities.TipoUsuarioEntities</class>
 		<class>pe.edu.upc.entities.Usuario</class>
+		<class>pe.edu.upc.entities.Tienda</class>
+		<class>pe.edu.upc.entities.DistritoEntities</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

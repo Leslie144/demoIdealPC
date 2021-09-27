@@ -84,15 +84,15 @@ public class DistritoController implements Serializable{
 		this.setDistritoCenter(spec);
 		return "distritomod.xhtml";
 	}
-
-	public IDistritoService getdService() {
-		return dService;
-	}
-
-	public void setdService(IDistritoService dService) {
-		this.dService = dService;
-	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public DistritoEntities getDistritoCenter() {
 		return distritoCenter;
 	}
@@ -100,9 +100,18 @@ public class DistritoController implements Serializable{
 	public void setDistritoCenter(DistritoEntities distritoCenter) {
 		this.distritoCenter = distritoCenter;
 	}
-	
-	
 
+	public List<DistritoEntities> getListaDistrito() {
+		return listaDistrito;
+	}
+
+	public void setListaDistrito(List<DistritoEntities> listaDistrito) {
+		this.listaDistrito = listaDistrito;
+	}
+
+	
+	
+	
 	
 	
 }

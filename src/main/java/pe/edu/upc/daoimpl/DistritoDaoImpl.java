@@ -27,30 +27,6 @@ public class DistritoDaoImpl implements IDistritoDao {
 		}
 	}
 
-	@Transactional
-	@Override
-	public void eliminar(int idDistrito) {
-		// TODO Auto-generated method stub
-		try {
-			em.persist(idDistrito);
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("Error al insertar un Distrito");
-		}
-
-	}
-
-	@Transactional
-	@Override
-	public void modificar(DistritoEntities dis) {
-		// TODO Auto-generated method stub
-		try {
-			em.merge(dis);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<DistritoEntities> list() {
@@ -63,13 +39,6 @@ public class DistritoDaoImpl implements IDistritoDao {
 			// TODO: handle exception
 		}
 		return lista;
-
-	}
-
-	@Override
-	public List<DistritoEntities> finByNameDistrito(DistritoEntities ds) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Transactional
