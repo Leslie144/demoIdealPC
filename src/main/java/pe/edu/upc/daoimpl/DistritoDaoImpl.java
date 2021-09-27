@@ -27,18 +27,33 @@ public class DistritoDaoImpl implements IDistritoDao {
 			System.out.println("Error al insertar un Distrito");
 		}
 	}
-	
+
 	@Transactional
 	@Override
-	public void delete(int idDistrito) {
+	public void eliminar(int idDistrito) {
+		// TODO Auto-generated method stub
 		try {
-			em.remove(idDistrito);
+			em.persist(idDistrito);
 		} catch (Exception e) {
-			System.out.println("Error al eliminar distrito");
+			// TODO: handle exception
+			System.out.println("Error al insertar un Distrito");
+		}
+
+	}
+
+	@Transactional
+	@Override
+	public void modificar(DistritoEntities dis) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(dis);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public List<DistritoEntities> list() {
 		// TODO Auto-generated method stub
 		List<DistritoEntities> lista = new ArrayList<DistritoEntities>();
@@ -49,15 +64,13 @@ public class DistritoDaoImpl implements IDistritoDao {
 			// TODO: handle exception
 		}
 		return lista;
+
 	}
-	
-	@Transactional
-	public void update(DistritoEntities distrito) {
-		try {
-			em.merge(distrito);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+
+	@Override
+	public List<DistritoEntities> finByNameDistrito(DistritoEntities ds) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

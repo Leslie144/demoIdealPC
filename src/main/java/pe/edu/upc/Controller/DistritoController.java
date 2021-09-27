@@ -1,5 +1,6 @@
 package pe.edu.upc.Controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,49 +14,76 @@ import pe.edu.upc.service.IDistritoService;
 
 @Named // #1
 @RequestScoped // #2
-public class DistritoController {
+public class DistritoController implements Serializable{
+	private static final long serialVersionUID = 1L;
 	@Inject // #3
 	private IDistritoService dService;
-
-	private DistritoEntities distrito;
+	private DistritoEntities distritoCenter;
 	List<DistritoEntities> listaDistrito;
 
 	@PostConstruct // #6
 	public void init() { // #5
-		distrito = new DistritoEntities();
-		listaDistrito = new ArrayList<DistritoEntities>();
+		this.listaDistrito=new ArrayList<DistritoEntities>();
+		this.distritoCenter=new DistritoEntities();
 		this.list();
 	}
 
 	public String newDistrito() { // #7
-		this.setDistrito(new DistritoEntities());
+		this.setDistritoCenter(new DistritoEntities());
 		return "distrito.xhtml";
 	}
 
 	public void insert() { // #8
-		dService.insert(distrito);
-		cleanDistrito();
+		try {
+			dService.insert(distritoCenter);
+			this.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
 	}
-	
-	public void delete(DistritoEntities distrito) {
-		dService.delete(distrito.getIdDistrito());
-		list();
+	public void eliminar(DistritoEntities dist) {
+		try {
+			dService.eliminar(dist.getIdDistrito());
+			list();
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
 
 	public void list() { // #9
-		listaDistrito = dService.list();
+		try {
+			listaDistrito=dService.list();
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
-	
-	public void cleanDistrito() {
+	public void clean() {
 		this.init();
 	}
-	
-	public void update() { // #8
-		dService.update(this.distrito);
-		this.list();
+	public void findByName() {
+		try {
+			if(distritoCenter.getNombreDistrito().isEmpty()) {
+				this.list();
+			}else {
+				listaDistrito=this.dService.finByNameDistrito(this.getDistritoCenter());
+			}
+		}catch(Exception e) {
+			e.getMessage();
+		}
+	}
+	public void modificar() {
+		try {
+			dService.modificar(this.distritoCenter);
+			this.list();
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
 
-	// Getters and Setters #4 except el service
+	public String Modifpre(DistritoEntities spec) {
+		this.setDistritoCenter(spec);
+		return "distritomod.xhtml";
+	}
 
 	public IDistritoService getdService() {
 		return dService;
@@ -65,13 +93,16 @@ public class DistritoController {
 		this.dService = dService;
 	}
 
-	public DistritoEntities getDistrito() {
-		return distrito;
+	public DistritoEntities getDistritoCenter() {
+		return distritoCenter;
 	}
 
-	public void setDistrito(DistritoEntities distrito) {
-		this.distrito = distrito;
+	public void setDistritoCenter(DistritoEntities distritoCenter) {
+		this.distritoCenter = distritoCenter;
 	}
+	
+	
 
+	
 	
 }

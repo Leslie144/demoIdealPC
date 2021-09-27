@@ -35,13 +35,13 @@
 			<p:selectOneMenu id="cboDistrito"
 				value="#{tiendaController.tienda.idDistrito}"
 				converter="omnifaces.SelectItemsConverter">
-				<f:selectItems value="#{tiendaController.listadistritos}"
-					var="m" itemLabel="#{m.nNombreDistrito}" itemValue="#{m}" />
+				<f:selectItems value="#{tiendaController.listadistritos}" var="m"
+					itemLabel="#{m.nombreDistrito}" itemValue="#{m}" />
 			</p:selectOneMenu>
 			<br />
 
 			<p:commandButton value="Grabar"
-				actionListener="#{tiendaController.insertTienda()}"
+				actionListener="#{tiendaController.insertTienda}"
 				styleClass="btn btn-primary " update="@form"
 				action="listSpecialty?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
