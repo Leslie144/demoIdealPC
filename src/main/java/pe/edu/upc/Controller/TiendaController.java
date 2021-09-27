@@ -42,6 +42,9 @@ public class TiendaController {
 		this.listTienda();
 		this.listDistritos();
 	}
+	public void clean() {
+		this.init();
+	}
 	
 	public String newTienda() {
 		this.setTienda(new Tienda());
@@ -52,8 +55,14 @@ public class TiendaController {
 		listadistritos=dService.list();
 	}
 	public void insertTienda() {
-		tService.insert(tienda);
-		this.listTienda();
+		try {
+
+			tService.insert(tienda);
+			this.listTienda();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		
 	}
 	public void listTienda() {
 		listatiendas=tService.list();
@@ -88,59 +97,53 @@ public class TiendaController {
 	}
 	public String Modifpre(Tienda spec) {
 		this.setTienda(spec);
-		return "tiendaMod.xhtml";
+		return "tiendamod.xhtml";
+	}
+	
+	public void finByNameTienda() {
+		try {
+			if(tienda.getNombreTienda().isEmpty()) {
+				this.listar();
+			}else {
+				listatiendas=this.tService.finByNameTienda(this.getTienda());
+			}
+		}catch(Exception e) {
+			e.getMessage();
+		}
 	}
 	
 	
 	
 	
 	
-	
-	
-	
-
-	public void settService(ITiendaService tService) {
-		this.tService = tService;
-	}
-
-	public IDistritoService getdService() {
-		return dService;
-	}
-
-	public void setdService(IDistritoService dService) {
-		this.dService = dService;
-	}
-
 	public Tienda getTienda() {
 		return tienda;
 	}
-
 	public void setTienda(Tienda tienda) {
 		this.tienda = tienda;
 	}
-
 	public DistritoEntities getDistrito() {
 		return distrito;
 	}
-
 	public void setDistrito(DistritoEntities distrito) {
 		this.distrito = distrito;
 	}
-
 	public List<Tienda> getListatiendas() {
 		return listatiendas;
 	}
-
 	public void setListatiendas(List<Tienda> listatiendas) {
 		this.listatiendas = listatiendas;
 	}
-
 	public List<DistritoEntities> getListadistritos() {
 		return listadistritos;
 	}
-
 	public void setListadistritos(List<DistritoEntities> listadistritos) {
 		this.listadistritos = listadistritos;
 	}
-
+	
+	
+	
+	
+	
+	
 }

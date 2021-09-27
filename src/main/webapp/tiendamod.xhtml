@@ -77,12 +77,11 @@
 				converter="omnifaces.SelectItemsConverter">
 				<f:selectItems value="#{tiendaController.listadistritos}" var="m"
 					itemLabel="#{m.nombreDistrito}" itemValue="#{m}" />
-
 			</p:selectOneMenu>
 			<br />
 
 			<p:commandButton value="Grabar"
-				actionListener="#{tiendaController.insertTienda}"
+				actionListener="#{tiendaController.modificar}"
 				styleClass="btn btn-primary " update="@form"
 				action="listtienda?faces-redirect=true" />
 			<p:commandButton value="Cancelar"

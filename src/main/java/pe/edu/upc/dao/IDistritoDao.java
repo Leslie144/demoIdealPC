@@ -6,8 +6,10 @@ import pe.edu.upc.entities.DistritoEntities;
 
 public interface IDistritoDao {
 	public void insert(DistritoEntities vc);
+	public void eliminar(int idDistrito);
+	public void modificar(DistritoEntities distrito);
 	
-	public void delete(int idDistrito);
+	public List<DistritoEntities> finByNameDistrito(DistritoEntities ds);
 
 	public List<DistritoEntities> list();
 	
