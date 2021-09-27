@@ -7,31 +7,31 @@
 	template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Fuente Modular:.
+        .:Registro de Tipo Usuario:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Fuente Modular</span>
+		<span>Tipo Usuario</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="Cid_tipo_usuario" value="Id "
+			<h:outputLabel for="idTipousuario" value="Id "
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Cid_tipo_usuario"
+			<p:inputText autocomplete="off" id="idTipousuario"
 				styleClass="form-control"
-				value="#{tipoUsuarioController.tipousuarioCenter.cidTipoUsuario}" required="true" />
+				value="#{tipoUsuarioController.tipousuarioCenter.idTipousuario}" required="true" />
 		
-			<h:outputLabel for="Ntipo_usuario" value="TipoUsuario"
+			<h:outputLabel for="nTipousuario" value="Tipo Usuario"
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Ntipo_usuario"
+			<p:inputText autocomplete="off" id="nTipousuario"
 				styleClass="form-control"
-				value="#{tipoUsuarioController.tipousuarioCenter.nTipoUsuario}"
+				value="#{tipoUsuarioController.tipousuarioCenter.nTipousuario}"
 				maxlength="100" required="true" validatorMessage="#{tipoUsuarioController.mensaje}">
 			</p:inputText>
 			<br />
 			<p:commandButton value="Grabar"
-				actionListener="#{tipoUsuarioController.modificar()}"
+				actionListener="#{tipoUsuarioController.insert()}"
 				styleClass="btn btn-primary " update="@form"
 				action="listTipoUsuario?faces-redirect=true" />
 			<p:commandButton value="Cancelar"

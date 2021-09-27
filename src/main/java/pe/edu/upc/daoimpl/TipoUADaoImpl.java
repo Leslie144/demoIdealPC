@@ -34,14 +34,16 @@ public class TipoUADaoImpl implements ITipoUADao {
 		// TODO Auto-generated method stub
 		List<TipoUAEntities> lista = new ArrayList<TipoUAEntities>();
 		try {
-			Query q = em.createQuery("select v from TIPO_UA V");
+			Query q = em.createQuery("select v from TipoUAEntities v");
 			lista = (List<TipoUAEntities>) q.getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("Error al listar una Tipo UA: " + e);
 		}
 		return lista;
 	}
 
+	@Transactional
 	@Override
 	public void delete(int id_tua) {
 		// TODO Auto-generated method stub
@@ -55,6 +57,7 @@ public class TipoUADaoImpl implements ITipoUADao {
 		}
 	}
 
+	@Transactional
 	@Override
 	public void update(TipoUAEntities vc) {
 		// TODO Auto-generated method stub

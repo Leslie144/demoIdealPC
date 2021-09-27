@@ -7,35 +7,35 @@
 	template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Tipo Modular:.
+        .:Registro de Tipo Recomendacion:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Tipo Modular</span>
+		<span>Tipo Recomendación</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="Cid_tipo_usuario" value="Id "
+			<h:outputLabel for="idTipoRecomendacion" value="Id "
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Cid_tipo_usuario"
+			<p:inputText autocomplete="off" id="idTipoRecomendacion"
 				styleClass="form-control"
-				value="#{tipoUsuarioController.tipousuarioCenter.cidTipoUsuario}" required="true" />
+				value="#{tipoRecomendacionController.tiporecomendacionCenter.idTipoRecomendacion}" required="true" />
 		
-			<h:outputLabel for="Ntipo_usuario" value="TipoUsuario"
+			<h:outputLabel for="tRecomendacion" value="Tipo "
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="Ntipo_usuario"
+			<p:inputText autocomplete="off" id="tRecomendacion"
 				styleClass="form-control"
-				value="#{tipoUsuarioController.tipousuarioCenter.nTipoUsuario}"
-				maxlength="100" required="true" validatorMessage="#{tipoUsuarioController.mensaje}">
+				value="#{tipoRecomendacionController.tiporecomendacionCenter.tRecomendacion}"
+				maxlength="100" required="true" validatorMessage="#{tipoRecomendacionController.mensaje}">
 			</p:inputText>
 			<br />
 			<p:commandButton value="Grabar"
-				actionListener="#{tipoUsuarioController.insert()}"
+				actionListener="#{tipoRecomendacionController.insert()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listTipoUsuario?faces-redirect=true" />
+				action="listTipoRecomendacion?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listTipoUsuario?faces-redirect=true" immediate="true"
+				action="listTipoRecomendacion?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 		</h:form>
 	</ui:define>

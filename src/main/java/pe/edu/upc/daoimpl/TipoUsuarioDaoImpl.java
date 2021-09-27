@@ -34,14 +34,17 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 		// TODO Auto-generated method stub
 		List<TipoUsuarioEntities> lista = new ArrayList<TipoUsuarioEntities>();
 		try {
-			Query q = em.createQuery("select v from TIPO_USUARIO v");
+			Query q = em.createQuery("select v from TipoUsuarioEntities v");
 			lista = (List<TipoUsuarioEntities>) q.getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("Error al listar un tipo de usuario: " + e);
+
 		}
 		return lista;
 	}
 
+	@Transactional
 	@Override
 	public void eliminar(int cid_tipo_usuario) {
 		// TODO Auto-generated method stub
@@ -54,6 +57,7 @@ public class TipoUsuarioDaoImpl implements ITipoUsuarioDao {
 		}
 	}
 
+	@Transactional
 	@Override
 	public void modificar(TipoUsuarioEntities vc) {
 		// TODO Auto-generated method stub

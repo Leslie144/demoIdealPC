@@ -27,4 +27,17 @@ public class TamanoMBServiceImpl implements ITamanoMBService {
 		// TODO Auto-generated method stub
 		return tmbDao.list(); // #6
 	}
+
+	@Override
+	public void delete(int idTamanoMB) {
+		// TODO Auto-generated method stub
+		tmbDao.delete(idTamanoMB);
+	}
+
+	@Override
+	public void update(TamanoMBEntities tamanomb) {
+		// TODO Auto-generated method stub
+		tmbDao.update(tamanomb);
+
+	}
 }

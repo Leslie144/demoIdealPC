@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="master.xhtml">
+	<ui:define name="title">
+        .:Registro de Usuario:.
+    </ui:define>
+	<ui:define name="titleCont">
+		<span>Usuario</span>
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idUsuario" value="Id " styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.idUsuario}" required="true" />
+
+
+			<p:outputLabel for="cbotipoUsuario" value="Tipo_Usuario">
+			</p:outputLabel>
+			<p:selectOneMenu id="cbotipoUsuario"
+			value="#{usuarioController.usuario.tipoUsuario}"
+			converter="omnifaces.SelectItemsConverter">
+			<f:selectItems value="#{usuarioController.listatipousuarios}"
+			var="t" itemLabel="#{t.nTipousuario}" itemValue="#{t}"></f:selectItems>
+			</p:selectOneMenu>
+			
+			<h:outputLabel for="nombreUsuario" value="Nombre "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nombreUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.nombreUsuario}" maxlength="100"
+				required="true" validatorMessage="#{usuarioController.mensaje}">
+			</p:inputText>
+			<br />
+
+			<h:outputLabel for="correoUsuario" value="Correo "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="correoUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.correoUsuario}" maxlength="100"
+				required="true" validatorMessage="#{usuarioController.mensaje}">
+			</p:inputText>
+			<br />
+
+
+			<h:outputLabel for="estadoUsuario" value="Estado "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="estadoUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.estadoUsuario}" maxlength="100"
+				required="true" validatorMessage="#{usuarioController.mensaje}">
+			</p:inputText>
+			<br />
+
+
+			<h:outputLabel for="telefonoUsuario" value="Teléfono "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="telefonoUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.telefonoUsuario}" maxlength="100"
+				required="true" validatorMessage="#{usuarioController.mensaje}">
+			</p:inputText>
+			<br />
+
+
+			<h:outputLabel for="contrasenaUsuario" value="Contraseña "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="contrasenaUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.contrasenaUsuario}"
+				maxlength="100" required="true"
+				validatorMessage="#{usuarioController.mensaje}">
+			</p:inputText>
+			<br />
+
+			<h:outputLabel for="disTrito" value="Distrito "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="disTrito"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.disTrito}" maxlength="100"
+				required="true" validatorMessage="#{usuarioController.mensaje}">
+			</p:inputText>
+			<br />
+
+
+			<h:outputLabel for="fechaRegistro" value="Fecha de Creación "
+				styleClass="control-label" />
+			<p:calendar id="fechaRegistro" pattern="dd/MM/yyyy"
+				value="#{usuarioController.usuario.fechaRegistro}" showOn="button"
+				timeZone="UTC" required="true">
+			</p:calendar>
+			<br />
+			
+			<h:outputLabel for="imagenUsuario" value="Imagen "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="imagenUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.imagenUsuario}" maxlength="100"
+				required="true" validatorMessage="#{usuarioController.mensaje}">
+			</p:inputText>
+			<br />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{usuarioController.modificar()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listUsuarios?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listUsuarios?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

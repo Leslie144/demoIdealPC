@@ -8,11 +8,11 @@
 
 
 	<ui:define name="title">
-        .:Listado Fuente Modular:.
+        .:Listado Tipo de Recomendación:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Fuente Modular </span>
+		<span>Tipo de Recomendación </span>
 	</ui:define>
 
 	<ui:define name="content">
@@ -22,38 +22,45 @@
 				<div class="col-sm-4">
 					<div class="form-group">
 						<p:commandButton value="Nuevo"
-							action="#{tipoModularController.newTipoModular()}"
+							action="#{tipoRecomendacionController.newTipoRecomendacion()}"
 							styleClass="btn btn-primary" ajax="false" />
+
 					</div>
 				</div>
 			</div>
 
+
+
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="listTipoModular" var="tm"
-							value="#{tipoModularController.listaTipoModular}"
+						<p:dataTable id="listTipoRecomendacion" var="tr"
+							value="#{tipoRecomendacionController.listaTipoRecomendacion}"
 							paginator="true" paginatorPosition="top"
 							rowsPerPageTemplate="10,20,30,40,50" rows="10"
 							styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{tm.idTipoModular}">
-								<h:outputText value="#{tm.idTipoModular}" />
+							<p:column headerText="Id" sortBy="#{tr.idTipoRecomendacion}">
+								<h:outputText value="#{tr.idTipoRecomendacion}" />
 							</p:column>
 
-							<p:column headerText="Tipo Modular" sortBy="#{tm.nTipoModular}">
-								<h:outputText value="#{tm.nTipoModular}" />
+							<p:column headerText="Tipo" sortBy="#{tr.tRecomendacion}">
+								<h:outputText value="#{tr.tRecomendacion}" />
+							</p:column>
+
+
+
+
+							<p:column headerText="Operación" exportable="false">
+								<h:commandLink action="listTipoUsuarios" value="Eliminar"
+									actionListener="#{tipoRecomendacionController.delete(tr)}"></h:commandLink>
 							</p:column>
 							<p:column headerText="Operación" exportable="false">
-								<h:commandLink action="listTipoModular" value="Eliminar"
-									actionListener="#{tipoModularController.eliminar(tm)}" />
-							</p:column>
-							<p:column headerText="Operación 2" exportable="false">
 
 								<h:commandLink value="Modificar"
-									action="#{tipoModularController.Modifpre(tm)}"
+									action="#{tipoRecomendacionController.UpdatePre(tr)}"
 									style="color:blue;" />
 							</p:column>
 

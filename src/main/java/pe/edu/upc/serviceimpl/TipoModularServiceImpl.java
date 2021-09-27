@@ -28,9 +28,9 @@ public class TipoModularServiceImpl implements ITipoModularService {
 	}
 
 	@Override
-	public void eliminar(int cid_tipo_modular) {
+	public void eliminar(int id_tipomodular) {
 		// TODO Auto-generated method stub
-		tmDao.eliminar(cid_tipo_modular);
+		tmDao.eliminar(id_tipomodular);
 	}
 
 	@Override

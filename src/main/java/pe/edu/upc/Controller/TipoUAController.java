@@ -34,6 +34,7 @@ public class TipoUAController {
 	public void init() { // #5
 		tipouaCenter = new TipoUAEntities();
 		listaTipoUA = new ArrayList<TipoUAEntities>();
+		this.list();
 	}
 
 	public String newTipoUA() { // #7
@@ -54,6 +55,10 @@ public class TipoUAController {
 		list();
 	}
 
+	public void cleanTipoUA() {
+		this.init();
+	}
+	
 	// modificar
 	public void update() {
 		try {
@@ -65,6 +70,11 @@ public class TipoUAController {
 		}
 	}
 
+	public String updatePre(TipoUAEntities tipoUA) { // #8
+		this.setTipouaCenter(tipoUA);
+		return"tipoUAMod.xhtml";
+	}
+	
 	
 	// Getters and Setters #4 except el service
 	public TipoUAEntities getTipouaCenter() {

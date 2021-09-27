@@ -14,7 +14,7 @@ import pe.edu.upc.service.ITipoUAService;
 @RequestScoped // #4
 public class TipoUAServiceImpl implements ITipoUAService {
 
-	@Inject // #3
+	@Inject
 	private ITipoUADao tuaDao;
 	@Override
 	// Methods #1

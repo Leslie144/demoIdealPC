@@ -16,7 +16,9 @@ public class DistritoServiceImpl implements IDistritoService {
 
 	@Inject // #3
 	private IDistritoDao dDao;
-	
+
+	// Methods #1
+
 	@Override
 	public void insert(DistritoEntities vc) {
 		// TODO Auto-generated method stub
@@ -39,5 +41,4 @@ public class DistritoServiceImpl implements IDistritoService {
 	public List<DistritoEntities> finByNameDistrito(DistritoEntities de) {
 		return dDao.finByNameDistrito(de);
 	}
-
 }

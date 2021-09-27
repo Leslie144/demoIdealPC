@@ -8,11 +8,11 @@
 
 
 	<ui:define name="title">
-        .:Listado Fuente Modular:.
+        .:Listado de Marca:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Fuente Modular </span>
+		<span>Lista de Marca </span>
 	</ui:define>
 
 	<ui:define name="content">
@@ -22,7 +22,7 @@
 				<div class="col-sm-4">
 					<div class="form-group">
 						<p:commandButton value="Nuevo"
-							action="#{tipoModularController.newTipoModular()}"
+							action="#{marcaController.newMarca()}"
 							styleClass="btn btn-primary" ajax="false" />
 					</div>
 				</div>
@@ -31,31 +31,35 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="form-group table-responsive box-table-class">
-						<p:dataTable id="listTipoModular" var="tm"
-							value="#{tipoModularController.listaTipoModular}"
-							paginator="true" paginatorPosition="top"
-							rowsPerPageTemplate="10,20,30,40,50" rows="10"
-							styleClass="table table-bordered"
+						<p:dataTable id="lstSpecialty" var="s"
+							value="#{marcaController.listaMarca}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
 							emptyMessage="No existen registros" rowIndexVar="item"
 							style="margin-bottom:0">
 
-							<p:column headerText="Id" sortBy="#{tm.idTipoModular}">
-								<h:outputText value="#{tm.idTipoModular}" />
+							<p:column headerText="Id" sortBy="#{s.idMarca}">
+								<h:outputText value="#{s.idMarca}" />
 							</p:column>
 
-							<p:column headerText="Tipo Modular" sortBy="#{tm.nTipoModular}">
-								<h:outputText value="#{tm.nTipoModular}" />
+							<p:column headerText="Nombre" sortBy="#{s.nMarca}">
+								<h:outputText value="#{s.nMarca}" />
 							</p:column>
+
+							<p:column headerText="Url" sortBy="#{s.urlMarca}">
+								<h:outputText value="#{s.urlMarca}" />
+							</p:column>
+
 							<p:column headerText="Operación" exportable="false">
-								<h:commandLink action="listTipoModular" value="Eliminar"
-									actionListener="#{tipoModularController.eliminar(tm)}" />
+								<h:commandLink action="listPowner" value="Eliminar"
+									actionListener="#{marcaController.delete(s)}" />
 							</p:column>
-							<p:column headerText="Operación 2" exportable="false">
 
+							<p:column headerText="Operación 2" exportable="false">
 								<h:commandLink value="Modificar"
-									action="#{tipoModularController.Modifpre(tm)}"
-									style="color:blue;" />
+									action="#{marcaController.updatePre(s)}" style="color:blue;" />
 							</p:column>
+
 
 						</p:dataTable>
 					</div>

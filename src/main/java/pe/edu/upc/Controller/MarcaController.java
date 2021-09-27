@@ -16,53 +16,61 @@ import pe.edu.upc.service.IMarcaService;
 public class MarcaController {
 	@Inject // #3
 	private IMarcaService mService;
-	private MarcaEntities marcaCenter;
+	private MarcaEntities marca;
 	List<MarcaEntities> listaMarca;
 
 	@PostConstruct // #6
 	private void init() { // #5
-		marcaCenter = new MarcaEntities();
+		marca = new MarcaEntities();
 		listaMarca = new ArrayList<MarcaEntities>();
 		this.list();
 	}
 
 	public String newMarca() { // #7
-		this.setMarcaCenter(new MarcaEntities());
+		this.setMarca(new MarcaEntities());
 		return "marca.xhtml";
 	}
 
 	public void insert() { // #8
-		mService.save(marcaCenter);
+		mService.insert(marca);
 		cleanMarca();
 	}
-	
+
 	public void delete(MarcaEntities marca) {
 		mService.delete(marca.getIdMarca());
 		list();
 	}
-	
+
 	public void cleanMarca() {
 		this.init();
-	}
-	
-	public void update() { // #8
-		mService.save(marcaCenter);
-		cleanMarca();
 	}
 
 	public void list() { // #9
 		listaMarca = mService.list();
 	}
-
 	
-	// Getters and Setters #4 except el service
-
-	public MarcaEntities getMarcaCenter() {
-		return marcaCenter;
+	public String updatePre(MarcaEntities marca) { // #8
+		this.setMarca(marca);
+		return"marcaMod.xhtml";
+	}
+	
+	public void update() {
+		try {
+			mService.update(this.marca);
+			this.list();
+		}catch(Exception ex) {
+			
+		}
 	}
 
-	public void setMarcaCenter(MarcaEntities marcaCenter) {
-		this.marcaCenter = marcaCenter;
+	// Getters and Setters #4 except el service
+
+	public MarcaEntities getMarca() {
+		return marca;
+	}
+
+	public void setMarca(MarcaEntities marca) {
+		this.marca = marca;
 	}
 
 	public List<MarcaEntities> getListaMarca() {
@@ -73,5 +81,4 @@ public class MarcaController {
 		this.listaMarca = listaMarca;
 	}
 
-	
 }

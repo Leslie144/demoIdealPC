@@ -18,6 +18,8 @@ public class DistritoEntities {
 	@Column(name = "nombreDistrito", length = 120, nullable = false)
 	private String nombreDistrito;
 
+
+	
 	public DistritoEntities() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -28,6 +30,9 @@ public class DistritoEntities {
 		this.idDistrito = idDistrito;
 		this.nombreDistrito = nombreDistrito;
 	}
+	
+	//Getters and setters
+
 
 	public int getIdDistrito() {
 		return idDistrito;
@@ -36,6 +41,7 @@ public class DistritoEntities {
 	public void setIdDistrito(int idDistrito) {
 		this.idDistrito = idDistrito;
 	}
+
 
 	public String getNombreDistrito() {
 		return nombreDistrito;
@@ -65,8 +71,13 @@ public class DistritoEntities {
 		if (idDistrito != other.idDistrito)
 			return false;
 		return true;
+
 	}
 
+	
+	
+
+	
 	
 	
 	

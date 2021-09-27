@@ -7,36 +7,39 @@
 <ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Tipo Modular:.
+        .:Modificar T Usuario:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Tipo Modular</span>
+		<span>Tipo Usuario</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="idTipoModular" value="Id "
+			<h:outputLabel for="idTipousuario" value="idTipousuario"
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="idTipoModular"
+
+			<p:inputText autocomplete="off" id="idTipousuario"
 				styleClass="form-control"
-				value="#{tipoModularController.tipoModularCenter.idTipoModular}"
+				value="#{tipoUsuarioController.tipousuarioCenter.idTipousuario}"
 				required="true" />
 
-			<h:outputLabel for="nTipoModular" value="Tipo "
+			<h:outputLabel for="nTipousuario" value="nTipousuario "
 				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="nTipoModular"
+			<p:inputText autocomplete="off" id="nTipousuario"
 				styleClass="form-control"
-				value="#{tipoModularController.tipoModularCenter.nTipoModular}"
-				maxlength="100" required="true">
-			</p:inputText>
+				value="#{tipoUsuarioController.tipousuarioCenter.nTipousuario}"
+				maxlength="30" required="true" />
+
 			<br />
+
+
 			<p:commandButton value="Grabar"
-				actionListener="#{tipoModularController.insert()}"
+				actionListener="#{tipoUsuarioController.modificar()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listTipoModular?faces-redirect=true" />
+				action="listTipoUsuario?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listTipoModular?faces-redirect=true" immediate="true"
+				action="listTipoUsuario?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 		</h:form>
 	</ui:define>

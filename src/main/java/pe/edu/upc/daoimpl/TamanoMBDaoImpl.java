@@ -39,4 +39,28 @@ public class TamanoMBDaoImpl implements ITamanoMBDao {
 		}
 		return lista;
 	}
+
+	@Transactional
+	@Override
+	public void delete(int idTamanoMB) {
+		// TODO Auto-generated method stub
+		TamanoMBEntities tmb = new TamanoMBEntities();
+		try {
+			tmb = em.getReference(TamanoMBEntities.class, idTamanoMB);
+			em.remove(tmb);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar el Tamaño del Motherboard");
+		}
+	}
+	
+	@Transactional
+	@Override
+	public void update(TamanoMBEntities tamanomb) {
+		// TODO Auto-generated method stub
+		try {
+			em.merge(tamanomb);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }

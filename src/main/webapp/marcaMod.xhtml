@@ -7,42 +7,44 @@
 <ui:composition template="master.xhtml">
 
 	<ui:define name="title">
-        .:Registro de Tipo UA:.
+        .:Modifcar Marca:.
     </ui:define>
 
 	<ui:define name="titleCont">
-		<span>Tipo UA mod</span>
+		<span>Marca</span>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="Cid_tipo_ua" value="Id "
+			<h:outputLabel for="idMarca" value="idMarca"
 				styleClass="control-label" />
 
-			<p:inputText autocomplete="off" id="Cid_tipo_ua"
-				styleClass="form-control"
-				value="#{tipoUAController.tipouaCenter.idTipoUA}" required="true" />
-			<h:outputLabel for="nameSpecialty" value="ID: "
-				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idMarca"
+				styleClass="form-control" value="#{marcaController.marca.idMarca}"
+				required="true" />
 
-			<p:inputText autocomplete="off" id="Ntipo_ua"
-				styleClass="form-control"
-				value="#{tipoUAController.tipouaCenter.nTipoUA}"
-				maxlength="30" required="true"
-				validatorMessage="#{tipoUAController.mensaje}">
-				<f:validateRegex pattern="[1-9]*" />
-			</p:inputText>
+			<h:outputLabel for="nMarca" value="nMarca "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="nMarca" styleClass="form-control"
+				value="#{marcaController.marca.nMarca}" maxlength="30"
+				required="true" />
+
+			<h:outputLabel for="urlMarca" value="urlMarca"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="urlMarca"
+				styleClass="form-control" value="#{marcaController.marca.urlMarca}"
+				required="true" />
 			<br />
 
 
-			
+
 
 			<p:commandButton value="Grabar"
-				actionListener="#{tipoUAController.update()}"
+				actionListener="#{marcaController.update()}"
 				styleClass="btn btn-primary " update="@form"
-				action="listTipoUA?faces-redirect=true" />
+				action="listMarca?faces-redirect=true" />
 			<p:commandButton value="Cancelar"
-				action="listTipoUA?faces-redirect=true" immediate="true"
+				action="listMarca?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />
 		</h:form>
 	</ui:define>

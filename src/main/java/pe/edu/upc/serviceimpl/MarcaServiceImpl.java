@@ -18,11 +18,11 @@ public class MarcaServiceImpl implements IMarcaService {
 	private IMarcaDao mDao;
 
 	// Methods #1
-	public void save(MarcaEntities vc) {
+	public void insert(MarcaEntities marca) {
 		// TODO Auto-generated method stub
-		mDao.insert(vc); // #5
+		mDao.insert(marca); // #5
 	}
-	
+
 	public void delete(int idMarca) {
 		mDao.delete(idMarca);
 	}
@@ -31,5 +31,9 @@ public class MarcaServiceImpl implements IMarcaService {
 		// TODO Auto-generated method stub
 		return mDao.list(); // #6
 	}
-}
 
+	public void update(MarcaEntities marca) {
+		mDao.update(marca);
+	}
+
+}

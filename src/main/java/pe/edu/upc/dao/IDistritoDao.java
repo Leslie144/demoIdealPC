@@ -12,4 +12,6 @@ public interface IDistritoDao {
 	public List<DistritoEntities> finByNameDistrito(DistritoEntities ds);
 
 	public List<DistritoEntities> list();
+	
+	public void update(DistritoEntities distrito);
 }
