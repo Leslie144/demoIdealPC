@@ -1,13 +1,10 @@
 package pe.edu.upc.serviceimpl;
 
-//import java.io.Serializable;
 import java.util.List;
-import java.util.Optional;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
 
 import pe.edu.upc.dao.IUsuarioDao;
 import pe.edu.upc.entities.Usuario;
@@ -44,20 +41,12 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		// TODO Auto-generated method stub
 		uDao.modificar(usuario);
 	}
-
+	
 	@Override
-	public Optional<Usuario> authentication(Usuario us) throws Exception {
-		// TODO Auto-generated method stub
-		/*String password = us.getContrasenaUsuario();
-
-		String passwordHash = uDao.getPassworHashedByUserName(us.getNombreUsuario());
-
-		if (BCrypt.checkpw(password, passwordHash)) {
-			us.setContrasenaUsuario(passwordHash);
-			return uDao.findUserByUsername(us);
-		}*/
-		
-		return Optional.of(new Usuario());
+	public Usuario login(Usuario usuario) {
+		List<Usuario> listusu = uDao.login(usuario.getNombreUsuario(),usuario.getContrasenaUsuario());
+		if(listusu.isEmpty()) return null;
+		else return listusu.get(0);
 	}
 
 }

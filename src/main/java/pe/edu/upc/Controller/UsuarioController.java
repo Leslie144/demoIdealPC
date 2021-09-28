@@ -23,6 +23,7 @@ public class UsuarioController {
 	private Usuario usuario;
 	private TipoUsuarioEntities tipousuario;
 	private String mensaje = "error";
+	private Usuario usuarioActual;
 
 	public String getMensaje() {
 		return mensaje;
@@ -46,18 +47,12 @@ public class UsuarioController {
 	}
 
 	public String ingresar() {
-		try {
-			for (int i = 0; listausuarios.size() > i; i++) {
-				if (usuario.getNombreUsuario() == listausuarios.get(i).getNombreUsuario()
-						&& usuario.getContrasenaUsuario() == listausuarios.get(i).getContrasenaUsuario()) {
-					return "panel.xhtml";
-				}
-			}
-
-		} catch (Exception e) {
-			e.getMessage();
+		usuarioActual=uService.login(usuario);
+		if(usuarioActual!=null) {
+			return "panel.xhtml";
+		}else {
+			return "marca.xhtml";
 		}
-		return "listMarca.xhtml";
 	}
 
 	public String newUsuario() {

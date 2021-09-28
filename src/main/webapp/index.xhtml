@@ -28,19 +28,19 @@
 				<p:outputLabel for="txtUsername" value="Usuario:" />
 				
 				<h:inputText id="txtUsername"
-					value="#{loginController.user.nombreUsuario}" styleClass="form-control" />
+					value="#{usuarioController.usuario.nombreUsuario}" styleClass="form-control" />
 				
 				<p:outputLabel for="txtPassword" value="Contraseña:" />
 				
 				<h:inputSecret id="txtPassword"
-					value="#{loginController.user.contrasenaUsuario}" styleClass="form-control" />
+					value="#{usuarioController.usuario.contrasenaUsuario}" styleClass="form-control" />
 			</h:panelGrid>
 			<p:commandButton value="Login"
-				action="#{loginController.authentication()}" update=":frm"
+				action="#{usuarioController.ingresar()}" update=":frm"
 				styleClass="btn btn-primary" />
 			
 			<p:commandButton value="Crear Usuario"
-				action="register?faces-redirect=true" immediate="true"
+				action="Registrar?faces-redirect=true" immediate="true"
 				styleClass="btn btn-primary" />
 		</div>
 	</h:form>

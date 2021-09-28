@@ -4,7 +4,6 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
-	
 <ui:composition template="master.xhtml">
 	<ui:define name="title">
         .:Registro de Usuario:.
@@ -14,10 +13,7 @@
 	</ui:define>
 	<ui:define name="content">
 		<h:form>
-			<h:outputLabel for="idUsuario" value="Id " styleClass="control-label" />
-			<p:inputText autocomplete="off" id="idUsuario"
-				styleClass="form-control"
-				value="#{usuarioController.usuario.idUsuario}" required="true" />
+			
 
 
 		
@@ -42,14 +38,9 @@
 			</p:inputText>
 			<br />
 
-			
-			
-
-
 			<p:commandButton value="iniciar sesion"
-				actionListener="#{usuarioController.ingresar()}"
-				styleClass="btn btn-primary " update="@form"
-				action="listUsuarios?faces-redirect=true" />
+				styleClass="btn btn-primary " 
+				action="#{usuarioController.ingresar()}" />
 			<p:commandButton value="Cancelar"
 				action="listUsuarios?faces-redirect=true" immediate="true"
 				styleClass="btn btn-default" ajax="false" />

@@ -2,12 +2,10 @@ package pe.edu.upc.daoimpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import pe.edu.upc.dao.IUsuarioDao;
@@ -68,39 +66,20 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 			System.out.println("Error al actualizar una usuario: " + e);
 		}
 	}
-
+	
+	@SuppressWarnings("unchecked")
 	@Override
-	public String getPassworHashedByUserName(String username) throws Exception {
-		// TODO Auto-generated method stub
-		Usuario user = new Usuario();
-
+	public List<Usuario> login(String nombre,String contrasena) {
+		List<Usuario> lista = new ArrayList<Usuario>();
 		try {
-			Query query = em.createQuery("FROM Usuario u WHERE u.nombreusuario = ?1");
-			query.setParameter(1, username);
-
-			@SuppressWarnings("unchecked")
-			List<Usuario> lista = query.getResultList();
-			if (!lista.isEmpty()) {
-				user = lista.get(0);
-			}
+			Query query = em.createQuery("FROM Usuario u WHERE u.nombreUsuario = ?1 and u.contrasenaUsuario = ?2");
+			query.setParameter(1, nombre);
+			query.setParameter(2, contrasena);			
+			lista = (List<Usuario>) query.getResultList();
+			
 		} catch (Exception e) {
 			throw e;
 		}
-
-		return user != null ? user.getContrasenaUsuario() : "";
+		return lista;
 	}
-
-	@Override
-	public Optional<Usuario> findUserByUsername(Usuario t) throws Exception {
-		// TODO Auto-generated method stub
-		Usuario user;
-		TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.idusuario = ?1", Usuario.class);
-		//query.setParameter(1, t.getCustomer().getId());
-
-		user = query.getSingleResult();
-
-		
-		return Optional.of(user);
-	}
-
 }
