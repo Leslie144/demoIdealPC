@@ -51,7 +51,7 @@ public class UsuarioController {
 		if(usuarioActual!=null) {
 			return "panel.xhtml";
 		}else {
-			return "marca.xhtml";
+			return "403.xhtml";
 		}
 	}
 
