@@ -24,11 +24,12 @@ public class TipoPanelController {
 	public void init() { // #5
 		tipopanelCenter = new TipoPanelEntities();
 		listaTipoPanel = new ArrayList<TipoPanelEntities>();
+		this.list();
 	}
 
 	public String newTipoPanel() { // #7
 		this.setTipopanelCenter(new TipoPanelEntities());
-		return "tipopanel.xhtml";
+		return "tipoPanel.xhtml";
 	}
 
 	public void insert() { // #8
@@ -41,6 +42,7 @@ public class TipoPanelController {
 
 	public void delete(TipoPanelEntities tipopanel) {
 		tpService.delete(tipopanel.getIdTipoPanel());
+		this.list();
 	}
 
 	public void cleanTipoPanel() {
@@ -50,6 +52,11 @@ public class TipoPanelController {
 	public void update() { // #8
 		tpService.update(tipopanelCenter);
 		cleanTipoPanel();
+	}
+
+	public String updatePre(TipoPanelEntities tp) { // #8
+		this.setTipopanelCenter(tp);
+		return "tipoPanelMod.xhtml";
 	}
 
 	// Getters and Setters #4 except el service

@@ -52,7 +52,7 @@ public class TipoRecomendacionController {
 	public void delete(TipoRecomendacionEntities tr) {
 		try {
 			trService.delete(tr.getIdTipoRecomendacion());
-			list();
+			this.list();
 		} catch (Exception e) {
 			e.getMessage();
 		}
@@ -60,6 +60,7 @@ public class TipoRecomendacionController {
 
 	public void clean() {
 		this.init();
+		
 	}
 
 	// modificar

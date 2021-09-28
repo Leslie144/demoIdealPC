@@ -49,8 +49,8 @@ public class TipoUADaoImpl implements ITipoUADao {
 		// TODO Auto-generated method stub
 		TipoUAEntities tipo_ua = new TipoUAEntities();
 		try {
-			tipo_ua = em.getReference(TipoUAEntities.class, tipo_ua);
-			em.remove(id_tua);
+			tipo_ua = em.getReference(TipoUAEntities.class, id_tua);
+			em.remove(tipo_ua);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println(e.getMessage());

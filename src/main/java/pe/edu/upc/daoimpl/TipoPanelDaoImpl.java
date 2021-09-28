@@ -32,10 +32,10 @@ public class TipoPanelDaoImpl implements ITipoPanelDao {
 		// TODO Auto-generated method stub
 		List<TipoPanelEntities> lista = new ArrayList<TipoPanelEntities>();
 		try {
-			Query q = em.createQuery("select v from TIPO_USUARIO v");
+			Query q = em.createQuery("select v from TipoPanelEntities v");
 			lista = (List<TipoPanelEntities>) q.getResultList();
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println("Error al listar un Tipo de Panel: " + e);
 		}
 		return lista;
 	}

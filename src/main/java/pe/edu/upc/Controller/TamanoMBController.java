@@ -24,11 +24,12 @@ public class TamanoMBController {
 	public void init() { // #5
 		tamanombCenter = new TamanoMBEntities();
 		listaTamanoMB = new ArrayList<TamanoMBEntities>();
+		this.list();
 	}
 
 	public String newTamanoMB() { // #7
 		this.setTamanombCenter(new TamanoMBEntities());
-		return "tamanomb.xhtml";
+		return "tamanoMB.xhtml";
 	}
 
 	public void insert() { // #8
@@ -48,6 +49,15 @@ public class TamanoMBController {
 		this.init();
 	}
 
+	public void update() { // #8
+		tmbService.update(tamanombCenter);
+		cleanTamanoMB();
+	}
+	public String updatePre(TamanoMBEntities tmb) { // #8
+		this.setTamanombCenter(tmb);
+		return "tamanoMBMod.xhtml";
+	}
+	
 	// Getters and Setters #4 except el service
 
 	public TamanoMBEntities getTamanombCenter() {

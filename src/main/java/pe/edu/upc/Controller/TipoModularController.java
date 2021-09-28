@@ -39,7 +39,7 @@ public class TipoModularController {
 
 	public void eliminar(TipoModularEntities tipomodular) {
 		tmService.eliminar(tipomodular.getidTipoModular());
-		list();
+		this.list();
 	}
 
 	public void cleanTipoModular() {

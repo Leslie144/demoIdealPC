@@ -49,8 +49,8 @@ public class TipoRecomendacionDaoImpl implements ITipoRecomendacionDao {
 		// TODO Auto-generated method stub
 		TipoRecomendacionEntities tipo_recomendacion = new TipoRecomendacionEntities();
 		try {
-			tipo_recomendacion = em.getReference(TipoRecomendacionEntities.class, tipo_recomendacion);
-			em.remove(id_recomendacion);
+			tipo_recomendacion = em.getReference(TipoRecomendacionEntities.class, id_recomendacion);
+			em.remove(tipo_recomendacion);
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Error al eliminar un tipo recomendación " + e);

@@ -32,7 +32,7 @@ public class TamanoMBDaoImpl implements ITamanoMBDao {
 		// TODO Auto-generated method stub
 		List<TamanoMBEntities> lista = new ArrayList<TamanoMBEntities>();
 		try {
-			Query q = em.createQuery("select v from TAMANO_MB V");
+			Query q = em.createQuery("select v from TamanoMBEntities V");
 			lista = (List<TamanoMBEntities>) q.getResultList();
 		} catch (Exception e) {
 			// TODO: handle exception
