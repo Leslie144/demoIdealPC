@@ -47,10 +47,10 @@ public class UsuarioController {
 	}
 
 	public String ingresar() {
-		usuarioActual=uService.login(usuario);
-		if(usuarioActual!=null) {
+		usuarioActual = uService.login(usuario);
+		if (usuarioActual != null) {
 			return "panel.xhtml";
-		}else {
+		} else {
 			return "403.xhtml";
 		}
 	}
